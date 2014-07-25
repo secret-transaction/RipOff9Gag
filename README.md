@@ -3,8 +3,10 @@ RipOff9Gag
 
 A 9Gag Ripoff App
 
-> I got bored and uninspired so and I just want to brush up my iOS and Google App Engine skills.
+> I got bored/uninspired and I just want to brush up my iOS and Google App Engine skills.
 > I can't think of anything easy to build so I just decided to mimic what 9Gag does.
+
+> Plans to send this to Google Play and Apple Appstore is still under consideration.
 
 Modules
 --------------
