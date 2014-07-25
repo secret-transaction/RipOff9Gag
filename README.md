@@ -11,9 +11,9 @@ A 9Gag Ripoff App
 Modules
 --------------
 
-* iOS Client
-* Android Client
-* Python Server
+* [iOS Client]
+* [Android Client]
+* [Python Server]
 
 Server Technologies
 --------------
@@ -29,3 +29,6 @@ Main Features
 [Google App Engine]:https://developers.google.com/appengine/docs/python/
 [NDB API]:https://developers.google.com/appengine/docs/python/ndb/
 [Google Cloud Storage]:https://developers.google.com/appengine/docs/python/googlecloudstorageclient/
+[iOS Client]:https://github.com/secret-transaction/RipOff9Gag/tree/master/iOS
+[Android Client]:https://github.com/secret-transaction/RipOff9Gag/tree/master/Android
+[Python Server]:https://github.com/secret-transaction/RipOff9Gag/tree/master/server
