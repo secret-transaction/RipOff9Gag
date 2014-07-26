@@ -5,9 +5,19 @@ api_version: 1
 threadsafe: true
 
 handlers:
+# Endpoints handler
+- url: /_ah/spi/.*
+  script: ripoff9gag.api.APPLICATION
+
 - url: /.*
   script: main.app
 
 libraries:
 - name: django
   version: "latest"
+
+- name: pycrypto
+  version: latest
+
+- name: endpoints
+  version: 1.0
