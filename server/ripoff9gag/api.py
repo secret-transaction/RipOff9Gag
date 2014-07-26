@@ -1,5 +1,6 @@
 import endpoints
 import logging
+from api_user import UserAPI
 from protorpc import messages
 from protorpc import remote
 
@@ -52,14 +53,14 @@ class UserPostListRequest(messages.Message):
 
 
 class UserAuthentication(messages.Message):
-    userId = messages.StringField(1, required=True)
-    userToken = messages.StringField(2, required=True)
+    user_id = messages.StringField(1, required=True)
+    user_token = messages.StringField(2, required=True)
 
 
 class UserPostCreateRequest(messages.Message):
     auth = messages.MessageField(UserAuthentication, 1)
     title = messages.StringField(2, required=True)
-    imageUrl = messages.StringField(3, required=True)
+    image_url = messages.StringField(3, required=True)
     is_unsafe = messages.BooleanField(4)
 
 
@@ -72,7 +73,7 @@ Endpoint APIs
 '''
 
 
-@endpoints.api(name='rogag', version='v1', description='Rogag API')
+@endpoints.api(name='rogag', version='v1', description='Rogag API for Viewing and Posting Funny Pics')
 class RipOff9GagAPI(remote.Service):
 
     @endpoints.method(UserPostListRequest, UserPostListResponse, path='posts.list', http_method='GET',
@@ -100,4 +101,4 @@ class RipOff9GagAPI(remote.Service):
 
 
 
-APPLICATION = endpoints.api_server([RipOff9GagAPI])
+APPLICATION = endpoints.api_server([RipOff9GagAPI, UserAPI])
