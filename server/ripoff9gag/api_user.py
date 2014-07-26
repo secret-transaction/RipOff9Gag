@@ -37,14 +37,14 @@ Endpoint APIs
 @endpoints.api(name='user', version='v1', description='Rogag API for User Management')
 class UserAPI(remote.Service):
 
-    @endpoints.method(UserRegistrationRequest, UserRegistrationResponse, path='user.create', http_method='POST',
-                      name='user.create')
+    @endpoints.method(UserRegistrationRequest, UserRegistrationResponse, path='create', http_method='POST',
+                      name='userCreate')
     def register_user(self, request):
         logging.info('registering:' + request.email)
 
         return UserRegistrationResponse(user_id='111')
 
-    @endpoints.method(UserLoginRequest, UserLoginResponse, path='user.login', http_method='PUT', name='user.login')
+    @endpoints.method(UserLoginRequest, UserLoginResponse, path='login', http_method='PUT', name='userLogin')
     def login(self, request):
         logging.info('login:' + request.username)
 
