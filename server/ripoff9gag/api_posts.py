@@ -9,24 +9,6 @@ Endpoint DTOs
 '''
 
 
-class UserPostListType(messages.Enum):
-    TRENDING = 1
-    HOT = 2
-
-
-class UserPost(messages.Message):
-    postId = messages.StringField(1)
-    points = messages.IntegerField(2)
-    commentCount = messages.IntegerField(3)
-    upVoted = messages.BooleanField(4)
-    downVoted = messages.BooleanField(5)
-    isUnsafe = messages.BooleanField(6)
-    title = messages.StringField(7)
-    imageUrl = messages.StringField(8)
-    imageType = messages.StringField(9)
-    owner = messages.MessageField(UserAccount, 10)
-
-
 class UserPostListResponse(messages.Message):
     cursor = messages.StringField(1)
     posts = messages.MessageField(UserPost, 2, repeated=True)
@@ -34,7 +16,8 @@ class UserPostListResponse(messages.Message):
 
 class UserPostListRequest(messages.Message):
     cursor = messages.StringField(1)
-    type = messages.EnumField(UserPostListType, 2, required=True)
+    pageSize = messages.IntegerField(2)
+    type = messages.EnumField(UserPostListType, 3, required=True)
 
 
 class UserPostCreateRequest(messages.Message):

@@ -19,6 +19,7 @@ class UserComment(messages.Message):
 
 class CommentListRequest(messages.Message):
     cursor = messages.StringField(1)
+    pageSize = messages.IntegerField(2)
 
 
 class CommentListResponse(messages.Message):
