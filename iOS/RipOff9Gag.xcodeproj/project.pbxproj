@@ -57,6 +57,7 @@
 		E93E3C4F198790F800056E0A /* GTLUserApiUserUserRegistrationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C45198790F800056E0A /* GTLUserApiUserUserRegistrationRequest.m */; };
 		E93E3C50198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C47198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m */; };
 		E93E3C51198790F800056E0A /* GTLUserConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C49198790F800056E0A /* GTLUserConstants.m */; };
+		E94621881987F08A002DFB71 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94621871987F08A002DFB71 /* DummyViewController.m */; };
 		E99EBD2819824B50000AE890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2719824B50000AE890 /* Foundation.framework */; };
 		E99EBD2A19824B50000AE890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2919824B50000AE890 /* CoreGraphics.framework */; };
 		E99EBD2C19824B50000AE890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2B19824B50000AE890 /* UIKit.framework */; };
@@ -189,6 +190,8 @@
 		E93E3C47198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserApiUserUserRegistrationResponse.m; sourceTree = "<group>"; };
 		E93E3C48198790F800056E0A /* GTLUserConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUserConstants.h; sourceTree = "<group>"; };
 		E93E3C49198790F800056E0A /* GTLUserConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserConstants.m; sourceTree = "<group>"; };
+		E94621861987F08A002DFB71 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
+		E94621871987F08A002DFB71 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
 		E99EBD2419824B50000AE890 /* RipOff9Gag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RipOff9Gag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99EBD2719824B50000AE890 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E99EBD2919824B50000AE890 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -497,6 +500,8 @@
 			children = (
 				E9D3861C19829150005A764B /* PostsTableViewController.h */,
 				E9D3861D19829150005A764B /* PostsTableViewController.m */,
+				E94621861987F08A002DFB71 /* DummyViewController.h */,
+				E94621871987F08A002DFB71 /* DummyViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				E93E3BF819878FA400056E0A /* GTLUtilities.m in Sources */,
 				E93E3C1A198790DF00056E0A /* GTLQueryPost.m in Sources */,
 				E93E3C15198790DF00056E0A /* GTLPostApiCommonUserPost.m in Sources */,
+				E94621881987F08A002DFB71 /* DummyViewController.m in Sources */,
 				E93E3BE519878F7B00056E0A /* GTMHTTPFetcherLogging.m in Sources */,
 				E99EBD3819824B50000AE890 /* AppDelegate.m in Sources */,
 				E99EBD3419824B50000AE890 /* main.m in Sources */,

@@ -16,41 +16,15 @@
                     </tabBar>
                     <connections>
                         <segue destination="AJq-jW-duZ" kind="relationship" relationship="viewControllers" id="tnm-Hp-hnN"/>
-                        <segue destination="QQL-Hu-tMV" kind="relationship" relationship="viewControllers" id="D3W-GU-wPx"/>
+                        <segue destination="E8h-qf-yav" kind="relationship" relationship="viewControllers" id="Ytx-nP-RRR"/>
+                        <segue destination="isB-tk-ijF" kind="relationship" relationship="viewControllers" id="TWH-Dl-XlX"/>
+                        <segue destination="82r-pJ-SYf" kind="relationship" relationship="viewControllers" id="eE0-Il-ZHx"/>
+                        <segue destination="8SQ-B4-QKC" kind="relationship" relationship="viewControllers" id="o7e-6s-9u6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
-        </scene>
-        <!--Posts Table View Controller - Trending-->
-        <scene sceneID="bUK-mh-eM6">
-            <objects>
-                <tableViewController title="Trending" id="QQL-Hu-tMV" customClass="PostsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8dZ-WE-Q4i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AgZ-V5-DNf">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AgZ-V5-DNf" id="flr-pX-Cr4">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="QQL-Hu-tMV" id="bqq-iu-35f"/>
-                            <outlet property="delegate" destination="QQL-Hu-tMV" id="PKA-IM-oUd"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Trending" image="tab_icon_trending" id="w23-Vk-Nzf"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aLD-UM-zmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="666" y="56"/>
         </scene>
         <!--Posts Table View Controller - Hot-->
         <scene sceneID="Sfh-gC-bQs">
@@ -75,16 +49,95 @@
                             <outlet property="delegate" destination="AJq-jW-duZ" id="UdP-pX-RN9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Hot" image="test" id="wWG-5p-Ady"/>
+                    <tabBarItem key="tabBarItem" title="Hot" image="tab_icon_hot" id="wWG-5p-Ady"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCP-2o-K3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660" y="-619"/>
+            <point key="canvasLocation" x="1027" y="-1379"/>
+        </scene>
+        <!--Dummy View Controller - Trending-->
+        <scene sceneID="7BM-QW-0ID">
+            <objects>
+                <viewController id="E8h-qf-yav" customClass="DummyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dAj-vp-Nc1"/>
+                        <viewControllerLayoutGuide type="bottom" id="4bQ-Wf-AFL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5g1-Ui-CZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trending" image="tab_icon_trending" id="ga9-rt-hhy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7i-Nz-XfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="-582"/>
+        </scene>
+        <!--Dummy View Controller - More-->
+        <scene sceneID="QMT-NM-qKM">
+            <objects>
+                <viewController id="isB-tk-ijF" customClass="DummyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rR6-Wj-6LT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oub-Ux-8R8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tGo-ub-rKH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="More" image="tab_ic_menu" id="AXu-bb-FMc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1sp-t3-trQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="180"/>
+        </scene>
+        <!--Dummy View Controller - Alerts-->
+        <scene sceneID="9W6-Vw-jL2">
+            <objects>
+                <viewController id="82r-pJ-SYf" customClass="DummyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KQv-fy-NTy"/>
+                        <viewControllerLayoutGuide type="bottom" id="bD2-0c-AV7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ijz-hv-jrV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Alerts" image="tab_ic_alert" id="SNi-9F-7Jg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4Y-qD-75Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="967"/>
+        </scene>
+        <!--Dummy View Controller - Me-->
+        <scene sceneID="HTA-WK-vHf">
+            <objects>
+                <viewController id="8SQ-B4-QKC" customClass="DummyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p6a-te-ZbB"/>
+                        <viewControllerLayoutGuide type="bottom" id="m3v-1v-ejy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pGj-T7-p2X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="tab_icon_user" id="n95-LL-Ud1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7F-J2-K6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="1731"/>
         </scene>
     </scenes>
     <resources>
-        <image name="tab_icon_trending" width="25" height="26"/>
-        <image name="test" width="79" height="71"/>
+        <image name="tab_ic_alert" width="25" height="25"/>
+        <image name="tab_ic_menu" width="25" height="25"/>
+        <image name="tab_icon_hot" width="25" height="25"/>
+        <image name="tab_icon_trending" width="25" height="25"/>
+        <image name="tab_icon_user" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
