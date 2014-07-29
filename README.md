@@ -43,7 +43,7 @@ endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag -
     api.ReactionAPI \
 	api.PostsAPI \
 	api.UserAPI
-```
+```  
     * for production server:
 ```sh
 endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "rogag-server.appspot.com" --output endpoints \
