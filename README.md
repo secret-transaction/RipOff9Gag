@@ -6,7 +6,7 @@ A 9Gag Ripoff App
 > I got bored/uninspired and I just want to brush up my iOS and Google App Engine skills.
 > I can't think of anything easy to build so I just decided to mimic what 9Gag does.
 
-> Plans to send this to Google Play and Apple Appstore is still under consideration.
+> I am actually planning to send this to Google Play and Apple Appstore just to see if it gets approved.
 
 Modules
 --------------
@@ -31,49 +31,44 @@ Instructions for Generating Client Library:
 ***
 iOS:
 --------------
-
-Sources: 
-* [Generate API Discovery Docs]
-* [Sample Code for Endpoints]
-
 1. Go to Application Module Root
 ```sh
-server > ripoff9gag
+cd RipOff9Gag
 ```
 
 2. Generate Discovery Doc 
-* for local:
+    * for local:
 ```sh
 endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "localhost:8080" --output endpoints \
     api.ReactionAPI \
 	api.PostsAPI \
 	api.UserAPI
-````
-* for production server:
+```
+    * for production server:
 ```sh
 endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "rogag-server.appspot.com" --output endpoints \
     api.ReactionAPI \
 	api.PostsAPI \
 	api.UserAPI
+```  
+3. Generate Client Library  
 ```
-
-3. Generate Client Library 
-
-```sh
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
     endpoints/post-v1.discovery \
-    --outputDir iOS/RipOff9Gag/RemoteClient/API/Post
-	
+    --outputDir iOS/RipOff9Gag/RemoteClient/API/Post    
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
     endpoints/reaction-v1.discovery \
-    --outputDir iOS/RipOff9Gag/RemoteClient/API/Reaction
-	
+    --outputDir iOS/RipOff9Gag/RemoteClient/API/Reaction  
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
     endpoints/user-v1.discovery \
     --outputDir iOS/RipOff9Gag/RemoteClient/API/User
 ```
 
-4. Delete the Generated **_Sources.m files (VERY IMPORTANT)
+5. Delete the Generated **_Sources.m files (VERY IMPORTANT)
+
+Sources: 
+* [Generate API Discovery Docs]
+* [Sample Code for Endpoints]
 
 ***
 
