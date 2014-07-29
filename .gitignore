@@ -21,6 +21,10 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+server/.idea/*
+
+#Generated Files
+server/**.discovery
 
 # Installer logs
 pip-log.txt

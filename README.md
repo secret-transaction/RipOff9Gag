@@ -26,9 +26,57 @@ Main Features
 * View Funny Pictures
 * Post Funny Pictures
 
+Instructions for Generating Client Library:
+--------------
+***
+iOS:
+--------------
+
+Sources: 
+* [Generate API Discovery Docs]
+* [Sample Code for Endpoints]
+
+1. Go to Application Module Root
+```sh
+server > ripoff9gag
+```
+
+2. Generate Discovery Doc 
+```sh
+endpointscfg.py get_discovery_doc --format rpc \
+    api.ReactionAPI \
+	api.PostsAPI \
+	api.UserAPI
+```
+
+3. Generate Client Library 
+
+```sh
+/Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
+    server/ripoff9gag/post-v1.discovery \
+    --outputDir iOS/RipOff9Gag/RemoteClient/API/Post
+	
+/Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
+    server/ripoff9gag/reaction-v1.discovery \
+    --outputDir iOS/RipOff9Gag/RemoteClient/API/Reaction
+	
+/Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
+    server/ripoff9gag/user-v1.discovery \
+    --outputDir iOS/RipOff9Gag/RemoteClient/API/User
+```
+***
+
+Android:
+--------------
+
+
+
+
 [Google App Engine]:https://developers.google.com/appengine/docs/python/
 [NDB API]:https://developers.google.com/appengine/docs/python/ndb/
 [Google Cloud Storage]:https://developers.google.com/appengine/docs/python/googlecloudstorageclient/
 [iOS Client]:https://github.com/secret-transaction/RipOff9Gag/tree/master/iOS
 [Android Client]:https://github.com/secret-transaction/RipOff9Gag/tree/master/Android
 [Python Server]:https://github.com/secret-transaction/RipOff9Gag/tree/master/server
+[Generate API Discovery Docs]:https://developers.google.com/appengine/docs/python/endpoints/endpoints_tool#generating_a_discovery_doc
+[Sample Code for Endpoints]:https://github.com/GoogleCloudPlatform/appengine-endpoints-helloendpoints-python
