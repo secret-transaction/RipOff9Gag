@@ -42,8 +42,16 @@ server > ripoff9gag
 ```
 
 2. Generate Discovery Doc 
+* for local:
 ```sh
-endpointscfg.py get_discovery_doc --format rpc \
+endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "localhost:8080" --output endpoints \
+    api.ReactionAPI \
+	api.PostsAPI \
+	api.UserAPI
+````
+* for production server:
+```sh
+endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "rogag-server.appspot.com" --output endpoints \
     api.ReactionAPI \
 	api.PostsAPI \
 	api.UserAPI
@@ -53,17 +61,20 @@ endpointscfg.py get_discovery_doc --format rpc \
 
 ```sh
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
-    server/ripoff9gag/post-v1.discovery \
+    endpoints/post-v1.discovery \
     --outputDir iOS/RipOff9Gag/RemoteClient/API/Post
 	
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
-    server/ripoff9gag/reaction-v1.discovery \
+    endpoints/reaction-v1.discovery \
     --outputDir iOS/RipOff9Gag/RemoteClient/API/Reaction
 	
 /Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator \
-    server/ripoff9gag/user-v1.discovery \
+    endpoints/user-v1.discovery \
     --outputDir iOS/RipOff9Gag/RemoteClient/API/User
 ```
+
+4. Delete the Generated **_Sources.m files (VERY IMPORTANT)
+
 ***
 
 Android:
