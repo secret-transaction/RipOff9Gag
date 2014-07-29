@@ -46,7 +46,7 @@
                             <outlet property="delegate" destination="QQL-Hu-tMV" id="PKA-IM-oUd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Trending" image="first" id="w23-Vk-Nzf"/>
+                    <tabBarItem key="tabBarItem" title="Trending" image="tab_icon_trending" id="w23-Vk-Nzf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLD-UM-zmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +75,7 @@
                             <outlet property="delegate" destination="AJq-jW-duZ" id="UdP-pX-RN9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Hot" id="wWG-5p-Ady"/>
+                    <tabBarItem key="tabBarItem" title="Hot" image="test" id="wWG-5p-Ady"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCP-2o-K3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +83,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="tab_icon_trending" width="25" height="26"/>
+        <image name="test" width="79" height="71"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
