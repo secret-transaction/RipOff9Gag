@@ -58,6 +58,7 @@
 		E93E3C50198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C47198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m */; };
 		E93E3C51198790F800056E0A /* GTLUserConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C49198790F800056E0A /* GTLUserConstants.m */; };
 		E94621881987F08A002DFB71 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94621871987F08A002DFB71 /* DummyViewController.m */; };
+		E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */; };
 		E99EBD2819824B50000AE890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2719824B50000AE890 /* Foundation.framework */; };
 		E99EBD2A19824B50000AE890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2919824B50000AE890 /* CoreGraphics.framework */; };
 		E99EBD2C19824B50000AE890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2B19824B50000AE890 /* UIKit.framework */; };
@@ -72,6 +73,7 @@
 		E99EBD4F19824B50000AE890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2B19824B50000AE890 /* UIKit.framework */; };
 		E99EBD5719824B50000AE890 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99EBD5519824B50000AE890 /* InfoPlist.strings */; };
 		E99EBD5919824B50000AE890 /* RipOff9GagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99EBD5819824B50000AE890 /* RipOff9GagTests.m */; };
+		E9CA9A3F19894964003F1D7D /* UserRegistrationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */; };
 		E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3861D19829150005A764B /* PostsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +194,8 @@
 		E93E3C49198790F800056E0A /* GTLUserConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserConstants.m; sourceTree = "<group>"; };
 		E94621861987F08A002DFB71 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		E94621871987F08A002DFB71 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
+		E95D3B3E1989050000ACA8D0 /* UserTabTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTabTableViewController.h; sourceTree = "<group>"; };
+		E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTabTableViewController.m; sourceTree = "<group>"; };
 		E99EBD2419824B50000AE890 /* RipOff9Gag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RipOff9Gag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99EBD2719824B50000AE890 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E99EBD2919824B50000AE890 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +214,8 @@
 		E99EBD5419824B50000AE890 /* RipOff9GagTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RipOff9GagTests-Info.plist"; sourceTree = "<group>"; };
 		E99EBD5619824B50000AE890 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E99EBD5819824B50000AE890 /* RipOff9GagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RipOff9GagTests.m; sourceTree = "<group>"; };
+		E9CA9A3D19894964003F1D7D /* UserRegistrationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistrationTableViewController.h; sourceTree = "<group>"; };
+		E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistrationTableViewController.m; sourceTree = "<group>"; };
 		E9D3861C19829150005A764B /* PostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsTableViewController.h; sourceTree = "<group>"; };
 		E9D3861D19829150005A764B /* PostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -502,6 +508,10 @@
 				E9D3861D19829150005A764B /* PostsTableViewController.m */,
 				E94621861987F08A002DFB71 /* DummyViewController.h */,
 				E94621871987F08A002DFB71 /* DummyViewController.m */,
+				E95D3B3E1989050000ACA8D0 /* UserTabTableViewController.h */,
+				E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */,
+				E9CA9A3D19894964003F1D7D /* UserRegistrationTableViewController.h */,
+				E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -629,6 +639,7 @@
 				E93E3C4B198790F800056E0A /* GTLServiceUser.m in Sources */,
 				E93E3BBF19878F2100056E0A /* GTLService.m in Sources */,
 				E93E3BCA19878F3C00056E0A /* GTMOAuth2Authentication.m in Sources */,
+				E9CA9A3F19894964003F1D7D /* UserRegistrationTableViewController.m in Sources */,
 				E93E3C39198790EC00056E0A /* GTLServiceReaction.m in Sources */,
 				E93E3BBE19878F2100056E0A /* GTLBatchQuery.m in Sources */,
 				E93E3BCB19878F3C00056E0A /* GTMOAuth2SignIn.m in Sources */,
@@ -660,6 +671,7 @@
 				E99EBD3419824B50000AE890 /* main.m in Sources */,
 				E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */,
 				E93E3C17198790DF00056E0A /* GTLPostApiPostsUserPostCreateResponse.m in Sources */,
+				E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */,
 				E93E3BF719878FA400056E0A /* GTLJSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
