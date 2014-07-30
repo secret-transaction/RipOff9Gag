@@ -24,7 +24,7 @@ var/
 server/.idea/*
 
 #Generated Files
-server/**.discovery
+endpoints/**.discovery
 
 # Installer logs
 pip-log.txt
