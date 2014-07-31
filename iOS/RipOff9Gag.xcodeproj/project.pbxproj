@@ -58,6 +58,7 @@
 		E93E3C50198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C47198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m */; };
 		E93E3C51198790F800056E0A /* GTLUserConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C49198790F800056E0A /* GTLUserConstants.m */; };
 		E94621881987F08A002DFB71 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94621871987F08A002DFB71 /* DummyViewController.m */; };
+		E9568CBA198A89C600FDA6E9 /* UserProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */; };
 		E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */; };
 		E99EBD2819824B50000AE890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2719824B50000AE890 /* Foundation.framework */; };
 		E99EBD2A19824B50000AE890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2919824B50000AE890 /* CoreGraphics.framework */; };
@@ -194,6 +195,9 @@
 		E93E3C49198790F800056E0A /* GTLUserConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserConstants.m; sourceTree = "<group>"; };
 		E94621861987F08A002DFB71 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		E94621871987F08A002DFB71 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
+		E9568CB8198A89C600FDA6E9 /* UserProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableViewController.h; sourceTree = "<group>"; };
+		E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableViewController.m; sourceTree = "<group>"; };
+		E9568CBB198A8A2800FDA6E9 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		E95D3B3E1989050000ACA8D0 /* UserTabTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTabTableViewController.h; sourceTree = "<group>"; };
 		E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTabTableViewController.m; sourceTree = "<group>"; };
 		E99EBD2419824B50000AE890 /* RipOff9Gag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RipOff9Gag.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,6 +479,7 @@
 		E99EBD2E19824B50000AE890 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9568CBB198A8A2800FDA6E9 /* constants.h */,
 				E99EBD2F19824B50000AE890 /* RipOff9Gag-Info.plist */,
 				E99EBD3019824B50000AE890 /* InfoPlist.strings */,
 				E99EBD3319824B50000AE890 /* main.m */,
@@ -512,6 +517,8 @@
 				E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */,
 				E9CA9A3D19894964003F1D7D /* UserRegistrationTableViewController.h */,
 				E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */,
+				E9568CB8198A89C600FDA6E9 /* UserProfileTableViewController.h */,
+				E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -638,6 +645,7 @@
 				E93E3BC319878F2100056E0A /* GTLErrorObject.m in Sources */,
 				E93E3C4B198790F800056E0A /* GTLServiceUser.m in Sources */,
 				E93E3BBF19878F2100056E0A /* GTLService.m in Sources */,
+				E9568CBA198A89C600FDA6E9 /* UserProfileTableViewController.m in Sources */,
 				E93E3BCA19878F3C00056E0A /* GTMOAuth2Authentication.m in Sources */,
 				E9CA9A3F19894964003F1D7D /* UserRegistrationTableViewController.m in Sources */,
 				E93E3C39198790EC00056E0A /* GTLServiceReaction.m in Sources */,
