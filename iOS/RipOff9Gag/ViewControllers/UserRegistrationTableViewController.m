@@ -9,6 +9,11 @@
 #import "UserRegistrationTableViewController.h"
 
 @interface UserRegistrationTableViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *agreeSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *fullName;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end
 
@@ -22,6 +27,15 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+- (IBAction)revalidateRegistration {
+    BOOL valid = NO;
+    
+    if (self.agreeSwitch.isOn) {
+        valid = YES;
+    }
+    
+    self.doneButton.enabled = valid;
 }
 
 
