@@ -375,7 +375,11 @@
                                 <segue destination="k4p-UG-RHl" kind="unwind" identifier="UnwindSegueUserProfile" unwindAction="unwindToUserProfileVC:" id="3eg-ef-YPi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="AQn-ew-a6k"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="AQn-ew-a6k">
+                            <connections>
+                                <action selector="done:" destination="OTq-N4-jtk" id="Zwg-HV-uxL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="agreeSwitch" destination="rFg-f8-Yo3" id="3uu-Y5-yI7"/>

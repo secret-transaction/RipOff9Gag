@@ -35,7 +35,25 @@
         valid = YES;
     }
     
+    //TODO: perform clever validation for fields
+    
     self.doneButton.enabled = valid;
+}
+
+- (IBAction)done:(id)sender {
+    GTLServiceUser *userService = [GTLServiceUser new];
+    
+    GTLUserApiUserUserRegistrationRequest *request = [GTLUserApiUserUserRegistrationRequest new];
+    request.fullName = self.fullName.text;
+    request.email = self.email.text;
+    request.password = self.password.text;
+    NSLog(@"Request:%@", request);
+    
+    GTLQueryUser *query = [GTLQueryUser queryForCreateWithObject:request];
+    
+    [userService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserApiUserUserRegistrationResponse *response, NSError *error) {
+        NSLog(@"done:%@", response.userId);
+    }];
 }
 
 
