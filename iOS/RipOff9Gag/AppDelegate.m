@@ -14,7 +14,6 @@
 {
     
     [[UINavigationBar appearance] setBarTintColor :[UIColor blackColor]];
-    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     NSShadow *shadow = [[NSShadow alloc] init];
@@ -26,6 +25,8 @@
                                                            shadow, NSShadowAttributeName,
                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0],
                                                           NSFontAttributeName, nil]];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     return YES;
 }
 							
