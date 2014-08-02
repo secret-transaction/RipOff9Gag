@@ -43,6 +43,10 @@ class UserAPI(remote.Service):
     def create_user(self, request):
         logging.info('registering:' + request.email)
 
+        existing_user = RogagUser.query_email(email=request.email).fetch(1)
+        if len(existing_user) > 0:
+            return UserRegistrationResponse(userId='failed')
+
         # creating entities:
         # https://developers.google.com/appengine/docs/python/ndb/entities
         user = RogagUser(fullName=request.fullName, email=request.email, password=request.password)
