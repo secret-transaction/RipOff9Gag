@@ -2,6 +2,7 @@ import endpoints
 import logging
 from protorpc import messages
 from protorpc import remote
+from models import RogagUser
 
 
 '''
@@ -42,7 +43,10 @@ class UserAPI(remote.Service):
     def create_user(self, request):
         logging.info('registering:' + request.email)
 
-        return UserRegistrationResponse(userId='111')
+        user = RogagUser(fullName=request.fullName, email=request.email, password=request.password)
+        user.put()
+
+        return UserRegistrationResponse(userId=str(user.key().id()))
 
     @endpoints.method(UserLoginRequest, UserLoginResponse, path='login', http_method='PUT', name='login')
     def login(self, request):
