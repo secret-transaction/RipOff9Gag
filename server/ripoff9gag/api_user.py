@@ -43,10 +43,13 @@ class UserAPI(remote.Service):
     def create_user(self, request):
         logging.info('registering:' + request.email)
 
+        # creating entities:
+        # https://developers.google.com/appengine/docs/python/ndb/entities
         user = RogagUser(fullName=request.fullName, email=request.email, password=request.password)
         user.put()
 
-        return UserRegistrationResponse(userId=str(user.key().id()))
+        # this is how we freakin' get our key
+        return UserRegistrationResponse(userId=str(user.key.urlsafe()))
 
     @endpoints.method(UserLoginRequest, UserLoginResponse, path='login', http_method='PUT', name='login')
     def login(self, request):

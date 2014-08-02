@@ -1,9 +1,9 @@
-from google.appengine.ext import db
+from google.appengine.ext import ndb
 
 # Create your models here.
 
 
-class RogagUser(db.Model):
-    fullName = db.StringProperty()
-    email = db.StringProperty()
-    password = db.StringProperty()
+class RogagUser(ndb.Model):
+    fullName = ndb.StringProperty()
+    email = ndb.StringProperty()
+    password = ndb.StringProperty()
