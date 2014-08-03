@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="1560" y="1709"/>
         </scene>
-        <!--Table View Controller - Login-->
+        <!--Login View Controller - Login-->
         <scene sceneID="xzI-nM-pnV">
             <objects>
-                <tableViewController id="wY7-d9-GN8" sceneMemberID="viewController">
+                <tableViewController id="wY7-d9-GN8" customClass="LoginViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="R6H-w0-7YS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,6 +206,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <action selector="reEvaluateForm:" destination="wY7-d9-GN8" eventType="editingDidEnd" id="8Ny-Cr-5BT"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -222,6 +225,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <action selector="reEvaluateForm:" destination="wY7-d9-GN8" eventType="editingDidEnd" id="PW6-F5-AHO"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -240,8 +246,13 @@
                                 <segue destination="dPw-Oe-xk8" kind="unwind" identifier="UnwindSegueUserProfile" unwindAction="unwindToUserProfileVC:" id="dkS-wi-8e4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="b64-sO-ldS"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="done" id="b64-sO-ldS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="done" destination="b64-sO-ldS" id="rCy-a5-6mM"/>
+                        <outlet property="password" destination="P3W-nI-FQl" id="3t7-QY-clS"/>
+                        <outlet property="username" destination="mvD-7X-nQt" id="JCA-lA-4Ui"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1f-i9-N6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="dPw-Oe-xk8" userLabel="Exit" sceneMemberID="exit"/>

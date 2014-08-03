@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F52198DE5150077F661 /* LoginViewController.m */; };
 		E93E3BBC19878F2100056E0A /* GTLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAB19878F2100056E0A /* GTLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBD19878F2100056E0A /* GTLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAD19878F2100056E0A /* GTLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBE19878F2100056E0A /* GTLBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAF19878F2100056E0A /* GTLBatchQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -89,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E92E3F51198DE5150077F661 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E92E3F52198DE5150077F661 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E93E3BAA19878F2100056E0A /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
 		E93E3BAB19878F2100056E0A /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
 		E93E3BAC19878F2100056E0A /* GTLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQuery.h; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */,
 				E9568CB8198A89C600FDA6E9 /* UserProfileTableViewController.h */,
 				E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */,
+				E92E3F51198DE5150077F661 /* LoginViewController.h */,
+				E92E3F52198DE5150077F661 /* LoginViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				E99EBD3819824B50000AE890 /* AppDelegate.m in Sources */,
 				E99EBD3419824B50000AE890 /* main.m in Sources */,
 				E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */,
+				E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */,
 				E93E3C17198790DF00056E0A /* GTLPostApiPostsUserPostCreateResponse.m in Sources */,
 				E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */,
 				E93E3BF719878FA400056E0A /* GTLJSONParser.m in Sources */,
