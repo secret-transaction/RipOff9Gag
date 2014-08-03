@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F52198DE5150077F661 /* LoginViewController.m */; };
+		E92E3F57198E39070077F661 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F56198E39070077F661 /* SessionManager.m */; };
+		E92E3F5A198E6F370077F661 /* UserProfileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */; };
 		E93E3BBC19878F2100056E0A /* GTLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAB19878F2100056E0A /* GTLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBD19878F2100056E0A /* GTLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAD19878F2100056E0A /* GTLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBE19878F2100056E0A /* GTLBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAF19878F2100056E0A /* GTLBatchQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -59,8 +61,7 @@
 		E93E3C50198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C47198790F800056E0A /* GTLUserApiUserUserRegistrationResponse.m */; };
 		E93E3C51198790F800056E0A /* GTLUserConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3C49198790F800056E0A /* GTLUserConstants.m */; };
 		E94621881987F08A002DFB71 /* DummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94621871987F08A002DFB71 /* DummyViewController.m */; };
-		E9568CBA198A89C600FDA6E9 /* UserProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */; };
-		E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */; };
+		E9568CBA198A89C600FDA6E9 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9568CB9198A89C600FDA6E9 /* UserProfileViewController.m */; };
 		E99EBD2819824B50000AE890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2719824B50000AE890 /* Foundation.framework */; };
 		E99EBD2A19824B50000AE890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2919824B50000AE890 /* CoreGraphics.framework */; };
 		E99EBD2C19824B50000AE890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2B19824B50000AE890 /* UIKit.framework */; };
@@ -75,7 +76,7 @@
 		E99EBD4F19824B50000AE890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99EBD2B19824B50000AE890 /* UIKit.framework */; };
 		E99EBD5719824B50000AE890 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99EBD5519824B50000AE890 /* InfoPlist.strings */; };
 		E99EBD5919824B50000AE890 /* RipOff9GagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99EBD5819824B50000AE890 /* RipOff9GagTests.m */; };
-		E9CA9A3F19894964003F1D7D /* UserRegistrationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */; };
+		E9CA9A3F19894964003F1D7D /* UserRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CA9A3E19894964003F1D7D /* UserRegistrationViewController.m */; };
 		E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3861D19829150005A764B /* PostsTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,10 @@
 /* Begin PBXFileReference section */
 		E92E3F51198DE5150077F661 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E92E3F52198DE5150077F661 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E92E3F55198E39070077F661 /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		E92E3F56198E39070077F661 /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
+		E92E3F58198E6F370077F661 /* UserProfileDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileDisplayViewController.h; sourceTree = "<group>"; };
+		E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileDisplayViewController.m; sourceTree = "<group>"; };
 		E93E3BAA19878F2100056E0A /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
 		E93E3BAB19878F2100056E0A /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
 		E93E3BAC19878F2100056E0A /* GTLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQuery.h; sourceTree = "<group>"; };
@@ -198,11 +203,9 @@
 		E93E3C49198790F800056E0A /* GTLUserConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserConstants.m; sourceTree = "<group>"; };
 		E94621861987F08A002DFB71 /* DummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyViewController.h; sourceTree = "<group>"; };
 		E94621871987F08A002DFB71 /* DummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyViewController.m; sourceTree = "<group>"; };
-		E9568CB8198A89C600FDA6E9 /* UserProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableViewController.h; sourceTree = "<group>"; };
-		E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableViewController.m; sourceTree = "<group>"; };
+		E9568CB8198A89C600FDA6E9 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		E9568CB9198A89C600FDA6E9 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		E9568CBB198A8A2800FDA6E9 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
-		E95D3B3E1989050000ACA8D0 /* UserTabTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTabTableViewController.h; sourceTree = "<group>"; };
-		E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTabTableViewController.m; sourceTree = "<group>"; };
 		E99EBD2419824B50000AE890 /* RipOff9Gag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RipOff9Gag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99EBD2719824B50000AE890 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E99EBD2919824B50000AE890 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,8 +224,8 @@
 		E99EBD5419824B50000AE890 /* RipOff9GagTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RipOff9GagTests-Info.plist"; sourceTree = "<group>"; };
 		E99EBD5619824B50000AE890 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E99EBD5819824B50000AE890 /* RipOff9GagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RipOff9GagTests.m; sourceTree = "<group>"; };
-		E9CA9A3D19894964003F1D7D /* UserRegistrationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistrationTableViewController.h; sourceTree = "<group>"; };
-		E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistrationTableViewController.m; sourceTree = "<group>"; };
+		E9CA9A3D19894964003F1D7D /* UserRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistrationViewController.h; sourceTree = "<group>"; };
+		E9CA9A3E19894964003F1D7D /* UserRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistrationViewController.m; sourceTree = "<group>"; };
 		E9D3861C19829150005A764B /* PostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsTableViewController.h; sourceTree = "<group>"; };
 		E9D3861D19829150005A764B /* PostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +254,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E92E3F54198E38B20077F661 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E92E3F55198E39070077F661 /* SessionManager.h */,
+				E92E3F56198E39070077F661 /* SessionManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E92E3F5B198E72D10077F661 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E9568CB8198A89C600FDA6E9 /* UserProfileViewController.h */,
+				E9568CB9198A89C600FDA6E9 /* UserProfileViewController.m */,
+				E92E3F58198E6F370077F661 /* UserProfileDisplayViewController.h */,
+				E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */,
+				E9CA9A3D19894964003F1D7D /* UserRegistrationViewController.h */,
+				E9CA9A3E19894964003F1D7D /* UserRegistrationViewController.m */,
+				E92E3F51198DE5150077F661 /* LoginViewController.h */,
+				E92E3F52198DE5150077F661 /* LoginViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		E93E3BA819878E8000056E0A /* RemoteClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +496,7 @@
 			children = (
 				E93E3BA819878E8000056E0A /* RemoteClient */,
 				E9D3861B198290AD005A764B /* ViewControllers */,
+				E92E3F54198E38B20077F661 /* Utils */,
 				E99EBD3619824B50000AE890 /* AppDelegate.h */,
 				E99EBD3719824B50000AE890 /* AppDelegate.m */,
 				E99EBD3919824B50000AE890 /* Main_iPhone.storyboard */,
@@ -512,18 +540,11 @@
 		E9D3861B198290AD005A764B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E92E3F5B198E72D10077F661 /* Profile */,
 				E9D3861C19829150005A764B /* PostsTableViewController.h */,
 				E9D3861D19829150005A764B /* PostsTableViewController.m */,
 				E94621861987F08A002DFB71 /* DummyViewController.h */,
 				E94621871987F08A002DFB71 /* DummyViewController.m */,
-				E95D3B3E1989050000ACA8D0 /* UserTabTableViewController.h */,
-				E95D3B3F1989050000ACA8D0 /* UserTabTableViewController.m */,
-				E9CA9A3D19894964003F1D7D /* UserRegistrationTableViewController.h */,
-				E9CA9A3E19894964003F1D7D /* UserRegistrationTableViewController.m */,
-				E9568CB8198A89C600FDA6E9 /* UserProfileTableViewController.h */,
-				E9568CB9198A89C600FDA6E9 /* UserProfileTableViewController.m */,
-				E92E3F51198DE5150077F661 /* LoginViewController.h */,
-				E92E3F52198DE5150077F661 /* LoginViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -636,6 +657,7 @@
 				E93E3BE419878F7B00056E0A /* GTMHTTPFetcher.m in Sources */,
 				E93E3BC419878F2100056E0A /* GTLRuntimeCommon.m in Sources */,
 				E93E3C16198790DF00056E0A /* GTLPostApiPostsUserPostCreateRequest.m in Sources */,
+				E92E3F5A198E6F370077F661 /* UserProfileDisplayViewController.m in Sources */,
 				E93E3C4A198790F800056E0A /* GTLQueryUser.m in Sources */,
 				E93E3C35198790EC00056E0A /* GTLReactionApiCommentsVoteRequest.m in Sources */,
 				E93E3C30198790EC00056E0A /* GTLQueryReaction.m in Sources */,
@@ -650,9 +672,9 @@
 				E93E3BC319878F2100056E0A /* GTLErrorObject.m in Sources */,
 				E93E3C4B198790F800056E0A /* GTLServiceUser.m in Sources */,
 				E93E3BBF19878F2100056E0A /* GTLService.m in Sources */,
-				E9568CBA198A89C600FDA6E9 /* UserProfileTableViewController.m in Sources */,
+				E9568CBA198A89C600FDA6E9 /* UserProfileViewController.m in Sources */,
 				E93E3BCA19878F3C00056E0A /* GTMOAuth2Authentication.m in Sources */,
-				E9CA9A3F19894964003F1D7D /* UserRegistrationTableViewController.m in Sources */,
+				E9CA9A3F19894964003F1D7D /* UserRegistrationViewController.m in Sources */,
 				E93E3C39198790EC00056E0A /* GTLServiceReaction.m in Sources */,
 				E93E3BBE19878F2100056E0A /* GTLBatchQuery.m in Sources */,
 				E93E3BCB19878F3C00056E0A /* GTMOAuth2SignIn.m in Sources */,
@@ -664,6 +686,7 @@
 				E93E3BF619878FA400056E0A /* GTLFramework.m in Sources */,
 				E93E3C1B198790DF00056E0A /* GTLServicePost.m in Sources */,
 				E93E3C14198790DF00056E0A /* GTLPostApiCommonUserAuthentication.m in Sources */,
+				E92E3F57198E39070077F661 /* SessionManager.m in Sources */,
 				E93E3C36198790EC00056E0A /* GTLReactionApiCommentsVoteResponse.m in Sources */,
 				E93E3C33198790EC00056E0A /* GTLReactionApiCommentsCommentCreateResponse.m in Sources */,
 				E93E3C34198790EC00056E0A /* GTLReactionApiCommentsCommentListResponse.m in Sources */,
@@ -685,7 +708,6 @@
 				E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */,
 				E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */,
 				E93E3C17198790DF00056E0A /* GTLPostApiPostsUserPostCreateResponse.m in Sources */,
-				E95D3B401989050000ACA8D0 /* UserTabTableViewController.m in Sources */,
 				E93E3BF719878FA400056E0A /* GTLJSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

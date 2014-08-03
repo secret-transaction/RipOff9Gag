@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SessionManager.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
@@ -22,7 +23,8 @@
     [super viewDidLoad];
 }
 
-- (IBAction)reEvaluateForm:(id)sender {
+- (IBAction)reEvaluateForm:(id)sender
+{
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     
@@ -34,6 +36,28 @@
     }
     
     self.done.enabled = isValid;
+}
+
+- (IBAction)login:(id)sender
+{
+    GTLServiceUser *service = [GTLServiceUser new];
+    
+    GTLUserApiUserUserLoginRequest *request = [GTLUserApiUserUserLoginRequest new];
+    request.username = self.username.text;
+    request.password = self.password.text;
+    
+    GTLQueryUser *query = [GTLQueryUser queryForLoginWithObject:request];
+    
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserApiUserUserLoginResponse *response, NSError *error) {
+        if (!error) {
+            NSLog(@"Login Success:%@, %@", response.userId, response.userToken);
+            
+            SessionManager *sm = [SessionManager sharedInstance];
+            [sm startSessionForUser:response.userId withToken:response.userToken];
+        } else {
+            NSLog(@"Login Failed:%@", error);
+        }
+    }];
 }
 
 @end

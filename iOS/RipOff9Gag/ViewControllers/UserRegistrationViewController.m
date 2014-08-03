@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "UserRegistrationTableViewController.h"
+#import "UserRegistrationViewController.h"
 
-@interface UserRegistrationTableViewController ()
+@interface UserRegistrationViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *agreeSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *fullName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation UserRegistrationTableViewController
+@implementation UserRegistrationViewController
 
 - (void)viewDidLoad
 {
@@ -28,6 +28,7 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)revalidateRegistration {
     BOOL valid = NO;
     

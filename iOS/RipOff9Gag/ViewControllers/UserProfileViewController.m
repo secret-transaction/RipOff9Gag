@@ -6,17 +6,28 @@
 //  Copyright (c) 2014 Secret Transaction Inc. All rights reserved.
 //
 
-#import "UserProfileTableViewController.h"
+#import "UserProfileViewController.h"
+#import "SessionManager.h"
 
-@interface UserProfileTableViewController ()
+@interface UserProfileViewController ()
 
 @end
 
-@implementation UserProfileTableViewController
+@implementation UserProfileViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    SessionManager *sm = [SessionManager sharedInstance];
+    if ([sm hasSession]) {
+        NSLog(@"User Already Logged In...");
+        [self performSegueWithIdentifier:SegueUserProfileDisplay sender:self];
+    }
+
 }
 
 #pragma mark - Navigation

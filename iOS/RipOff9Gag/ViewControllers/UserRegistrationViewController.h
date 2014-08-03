@@ -1,5 +1,5 @@
 //
-//  UserTabTableViewController.h
+//  UserRegistrationTableViewController.h
 //  RipOff9Gag
 //
 //  Created by Lyndon Michael Bibera on 7/30/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserTabTableViewController : UITableViewController
+@interface UserRegistrationViewController : UITableViewController
 
 @end
