@@ -30,4 +30,10 @@
     
 }
 
+- (IBAction)logout:(id)sender
+{
+    [[SessionManager sharedInstance] endSessionForUser];
+    [self.navigationController.tabBarController setSelectedIndex:0];
+}
+
 @end

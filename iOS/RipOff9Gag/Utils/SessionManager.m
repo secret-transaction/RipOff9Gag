@@ -46,6 +46,8 @@
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     [ud setObject:nil forKey:UDSessionUserId];
     [ud setObject:nil forKey:UDSessionUserToken];
+    _userId = nil;
+    _userToken = nil;
     
     [ud synchronize];
 }
