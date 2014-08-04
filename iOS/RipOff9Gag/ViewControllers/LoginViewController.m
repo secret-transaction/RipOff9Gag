@@ -40,6 +40,7 @@
 
 - (IBAction)login:(id)sender
 {
+    self.done.enabled = NO;
     GTLServiceUser *service = [GTLServiceUser new];
     
     GTLUserApiUserUserLoginRequest *request = [GTLUserApiUserUserLoginRequest new];
@@ -57,6 +58,8 @@
         } else {
             NSLog(@"Login Failed:%@", error);
         }
+        
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 
