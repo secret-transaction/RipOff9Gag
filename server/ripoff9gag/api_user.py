@@ -59,4 +59,10 @@ class UserAPI(remote.Service):
     def login(self, request):
         logging.info('login:' + request.username)
 
-        return  UserLoginResponse(userId='1', username='fake_user', userToken='fake_token')
+        results = RogagUser.query_email_and_password(email=request.username, password=request.password).fetch(1)
+        if len(results) > 0:
+            user = results[0]
+            logging.info('found ' + user.fullName)
+            return UserLoginResponse(userId=str(user.key.urlsafe()), username=user.fullName, userToken='fake_token')
+
+        return  UserLoginResponse(userId='no', username='xx', userToken='xx')

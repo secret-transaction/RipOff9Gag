@@ -11,3 +11,8 @@ class RogagUser(ndb.Model):
     @classmethod
     def query_email(cls, email):
         return cls.query(cls.email == email)
+
+
+    @classmethod
+    def query_email_and_password(cls, email, password):
+        return cls.query(ndb.AND(cls.email == email, cls.password == password))
