@@ -55,6 +55,7 @@
             
             SessionManager *sm = [SessionManager sharedInstance];
             [sm startSessionForUser:response.userId withToken:response.userToken];
+            sm.userName = response.username;
         } else {
             NSLog(@"Login Failed:%@", error);
         }

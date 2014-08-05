@@ -12,6 +12,7 @@
 
 @synthesize userId = _userId;
 @synthesize userToken = _userToken;
+@synthesize userName = _userName;
 
 + (SessionManager *)sharedInstance
 {
@@ -70,6 +71,24 @@
     }
     
     return _userToken;
+}
+
+- (NSString *)userName
+{
+    if (!_userName) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        _userName = [ud stringForKey:UDSessionUserName];
+    }
+    
+    return _userName;
+}
+
+- (void)setUserName:(NSString *)userName
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:userName forKey:UDSessionUserName];
+    
+    [ud synchronize];
 }
 
 @end

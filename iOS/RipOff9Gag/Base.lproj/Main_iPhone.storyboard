@@ -496,7 +496,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnz-Qx-hI5">
-                                                    <rect key="frame" x="68" y="11" width="29" height="21"/>
+                                                    <rect key="frame" x="68" y="11" width="232" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -624,6 +624,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="gPF-jX-dSq"/>
+                    <connections>
+                        <outlet property="profileImage" destination="5jZ-WG-4h2" id="nZe-1a-GSw"/>
+                        <outlet property="profileName" destination="jnz-Qx-hI5" id="UZC-Kz-6n3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPW-3S-MTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

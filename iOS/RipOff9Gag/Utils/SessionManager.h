@@ -8,11 +8,13 @@
 
 static NSString *const UDSessionUserId = @"UDSessionUserId";
 static NSString *const UDSessionUserToken = @"UDSessionUserToken";
+static NSString *const UDSessionUserName = @"UDSessionUserName";
 
 @interface SessionManager : NSObject
 
 @property (strong, nonatomic, readonly) NSString *userId;
 @property (strong, nonatomic, readonly) NSString *userToken;
+@property (strong, nonatomic) NSString *userName;
 
 + (SessionManager *)sharedInstance;
 

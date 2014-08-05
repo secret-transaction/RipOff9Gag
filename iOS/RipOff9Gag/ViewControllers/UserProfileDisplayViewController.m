@@ -10,6 +10,8 @@
 #import "SessionManager.h"
 
 @interface UserProfileDisplayViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *profileName;
 
 @end
 
@@ -26,6 +28,8 @@
     SessionManager *sm = [SessionManager sharedInstance];
     if (![sm hasSession]) {
         [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        self.profileName.text = sm.userName;
     }
     
 }
