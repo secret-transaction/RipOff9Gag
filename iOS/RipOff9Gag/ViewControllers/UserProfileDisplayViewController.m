@@ -26,12 +26,27 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     SessionManager *sm = [SessionManager sharedInstance];
-    if (![sm hasSession]) {
-        [self.navigationController popViewControllerAnimated:YES];
+    
+    if ([sm hasSession]) {
+        [self setViewFromSession];
     } else {
-        self.profileName.text = [sm get:UDSessionUserName];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
+}
+
+- (void)setViewFromSession
+{
+    SessionManager *sm = [SessionManager sharedInstance];
+    self.profileName.text = [sm get:UDSessionUserName];
+    
+    //TODO: probably need to run this on a separate thread
+    //set profile image
+    NSURL *url = [NSURL URLWithString:[sm get:UDSessionUserImageUrl]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    self.profileImage.image = image;
 }
 
 - (IBAction)logout:(id)sender
