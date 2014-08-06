@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for User Management
 // Classes:
-//   GTLUserApiUserUserLoginResponse (0 custom class methods, 3 custom properties)
+//   GTLUserApiUserUserLoginResponse (0 custom class methods, 4 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -28,6 +28,7 @@
 
 @interface GTLUserApiUserUserLoginResponse : GTLObject
 @property (copy) NSString *userId;
+@property (copy) NSString *userImageUrl;
 @property (copy) NSString *username;
 @property (copy) NSString *userToken;
 @end

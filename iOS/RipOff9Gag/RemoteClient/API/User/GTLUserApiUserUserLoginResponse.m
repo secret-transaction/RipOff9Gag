@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for User Management
 // Classes:
-//   GTLUserApiUserUserLoginResponse (0 custom class methods, 3 custom properties)
+//   GTLUserApiUserUserLoginResponse (0 custom class methods, 4 custom properties)
 
 #import "GTLUserApiUserUserLoginResponse.h"
 
@@ -23,5 +23,5 @@
 //
 
 @implementation GTLUserApiUserUserLoginResponse
-@dynamic userId, username, userToken;
+@dynamic userId, userImageUrl, username, userToken;
 @end
