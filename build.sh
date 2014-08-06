@@ -1,9 +1,9 @@
 echo "Starting Script..."
 echo "Generating Discovery Files..."
 
-domain="localhost:8080"
+domain="rogag-server.appspot.com"
 service_generator="/Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGenerator-auogvovcdkjnxnblqocbhybotoxv/Build/Products/Debug/ServiceGenerator"
-output_dir="endpoints"
+output_dir="iOS/RipOff9Gag/RemoteClient"
 
 endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "$domain" --output endpoints api.ReactionAPI api.PostsAPI api.UserAPI
 
@@ -21,6 +21,6 @@ $service_generator \
 
 echo "Deleting Useless Files..."
 
-rm endpoints/API/**/*_Sources.m
+rm $output_dir/API/**/*_Sources.m
 
 echo "Done"
