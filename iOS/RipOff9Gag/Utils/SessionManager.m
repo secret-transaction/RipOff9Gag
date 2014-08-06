@@ -8,11 +8,17 @@
 
 #import "SessionManager.h"
 
+//private variables
+@interface SessionManager()
+
+@property NSMutableDictionary *props;
+
+@end
+
 @implementation SessionManager
 
 @synthesize userId = _userId;
 @synthesize userToken = _userToken;
-@synthesize userName = _userName;
 
 + (SessionManager *)sharedInstance
 {
@@ -73,22 +79,30 @@
     return _userToken;
 }
 
-- (NSString *)userName
+- (void)put:(NSString *)value withKey:(NSString *)key;
 {
-    if (!_userName) {
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        _userName = [ud stringForKey:UDSessionUserName];
+    if (!self.props) {
+        self.props = [NSMutableDictionary new];
     }
-    
-    return _userName;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:value forKey:key];
+    [ud synchronize];
+
+    [self.props setObject:value forKey:key];
 }
 
-- (void)setUserName:(NSString *)userName
+- (NSString *)get:(NSString *)key
 {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:userName forKey:UDSessionUserName];
+    if (!self.props) {
+        self.props = [NSMutableDictionary new];
+    }
+    NSString *val = [self.props valueForKey:key];
+    if (!val) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        val = [ud valueForKey:key];
+    }
     
-    [ud synchronize];
+    return val;
 }
 
 @end

@@ -9,12 +9,12 @@
 static NSString *const UDSessionUserId = @"UDSessionUserId";
 static NSString *const UDSessionUserToken = @"UDSessionUserToken";
 static NSString *const UDSessionUserName = @"UDSessionUserName";
+static NSString *const UDSessionUserImageUrl = @"UDSessionUserImageUrl";
 
 @interface SessionManager : NSObject
 
 @property (strong, nonatomic, readonly) NSString *userId;
 @property (strong, nonatomic, readonly) NSString *userToken;
-@property (strong, nonatomic) NSString *userName;
 
 + (SessionManager *)sharedInstance;
 
@@ -23,5 +23,8 @@ static NSString *const UDSessionUserName = @"UDSessionUserName";
 
 //clear all user-specific data from user defaults, especially useful for logout
 - (void)endSessionForUser;
+
+- (void)put:(NSString *)value withKey:(NSString *)key;
+- (NSString *)get:(NSString *)key;
 
 @end
