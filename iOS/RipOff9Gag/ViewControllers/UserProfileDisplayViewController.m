@@ -29,7 +29,7 @@
     if (![sm hasSession]) {
         [self.navigationController popViewControllerAnimated:YES];
     } else {
-        self.profileName.text = sm.userName;
+        self.profileName.text = [sm get:UDSessionUserName];
     }
     
 }
