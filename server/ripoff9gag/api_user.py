@@ -29,6 +29,7 @@ class UserLoginResponse(messages.Message):
     userId = messages.StringField(1, required=True)
     username = messages.StringField(2, required=True)
     userToken = messages.StringField(3, required=True)
+    userImageUrl = messages.StringField(4)
 
 '''
 Endpoint APIs
@@ -63,6 +64,16 @@ class UserAPI(remote.Service):
         if len(results) > 0:
             user = results[0]
             logging.info('found ' + user.fullName)
-            return UserLoginResponse(userId=str(user.key.urlsafe()), username=user.fullName, userToken='fake_token')
 
-        return  UserLoginResponse(userId='no', username='xx', userToken='xx')
+            #TODO: find a better way to create an access token (issue#2)
+            access_token = user.key.urlsafe() + '_' + 'xxxtokenxxx'
+            user.access_token = access_token
+            user.put()
+
+            #TODO: figure out where to store and retrieve images (issue#3)
+            image_url = 'http://38.media.tumblr.com/avatar_a1f7bb7ebcce_128.png'
+
+            return UserLoginResponse(userId=str(user.key.urlsafe()), username=user.fullName, userToken=access_token,
+                                     userImageUrl=image_url)
+
+        return  UserLoginResponse(userId='', username='', userToken='')

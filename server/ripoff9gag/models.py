@@ -7,6 +7,7 @@ class RogagUser(ndb.Model):
     fullName = ndb.StringProperty()
     email = ndb.StringProperty()
     password = ndb.StringProperty()
+    access_token = ndb.StringProperty()
 
     @classmethod
     def query_email(cls, email):
