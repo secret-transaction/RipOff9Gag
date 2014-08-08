@@ -14,30 +14,26 @@
 
 @implementation PostsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPost)];
+    UIBarButtonItem *refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTable)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:refreshBarButtonItem, addBarButtonItem, nil];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)addPost
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Add Post");
+    //TODO: perform check if user has logged in
+    [self performSegueWithIdentifier:SegueAddPost sender:self];
+}
+
+- (void)refreshTable
+{
+    NSLog(@"Refresh");
 }
 
 #pragma mark - Table view data source

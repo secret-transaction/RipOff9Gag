@@ -10,4 +10,6 @@
 
 @interface PostsTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *title;
+
 @end

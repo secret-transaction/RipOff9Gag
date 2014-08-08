@@ -20,7 +20,7 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     SessionManager *sm = [SessionManager sharedInstance];
     if ([sm hasSession]) {

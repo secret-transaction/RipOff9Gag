@@ -12,6 +12,7 @@
 //segues Segue<VCName without "ViewController">
 static NSString *const SegueUserRegistration = @"SegueUserRegistration";
 static NSString *const SegueUserProfileDisplay = @"SegueUserProfileDisplay";
+static NSString *const SegueAddPost = @"SegueAddPost";
 
 //unwind segues UnwindSegue<VCName without "ViewController">
 static NSString *const UnwindSegueUserProfile = @"UnwindSegueUserProfile";
