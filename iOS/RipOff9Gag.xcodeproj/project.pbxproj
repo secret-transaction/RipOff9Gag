@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9049732199536B400EBBBFE /* AddPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9049731199536B400EBBBFE /* AddPostViewController.m */; };
 		E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F52198DE5150077F661 /* LoginViewController.m */; };
 		E92E3F57198E39070077F661 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F56198E39070077F661 /* SessionManager.m */; };
 		E92E3F5A198E6F370077F661 /* UserProfileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */; };
@@ -91,6 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9049730199536B400EBBBFE /* AddPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController.h; sourceTree = "<group>"; };
+		E9049731199536B400EBBBFE /* AddPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPostViewController.m; sourceTree = "<group>"; };
 		E92E3F51198DE5150077F661 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E92E3F52198DE5150077F661 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E92E3F55198E39070077F661 /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 				E9D3861D19829150005A764B /* PostsTableViewController.m */,
 				E94621861987F08A002DFB71 /* DummyViewController.h */,
 				E94621871987F08A002DFB71 /* DummyViewController.m */,
+				E9049730199536B400EBBBFE /* AddPostViewController.h */,
+				E9049731199536B400EBBBFE /* AddPostViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 				E93E3BE519878F7B00056E0A /* GTMHTTPFetcherLogging.m in Sources */,
 				E99EBD3819824B50000AE890 /* AppDelegate.m in Sources */,
 				E99EBD3419824B50000AE890 /* main.m in Sources */,
+				E9049732199536B400EBBBFE /* AddPostViewController.m in Sources */,
 				E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */,
 				E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */,
 				E93E3C17198790DF00056E0A /* GTLPostApiPostsUserPostCreateResponse.m in Sources */,
