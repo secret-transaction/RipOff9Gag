@@ -26,7 +26,7 @@ static NSInteger const PickerGallery = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.description.delegate = self;
 }
 
 - (IBAction)changePhoto:(UITapGestureRecognizer *)sender
@@ -45,6 +45,22 @@ static NSInteger const PickerGallery = 1;
 - (IBAction)upload:(id)sender
 {
     NSLog(@"Upload Post");
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSLog(@"textViewDidChange:");
+    [self validate];
+}
+
+- (void)validate
+{
+    //TODO: perform validation for image
+    BOOL validPicture = YES;
+
+    BOOL validDescription = self.description.text.length > 0;
+    
+    self.uploadButton.enabled = validDescription && validPicture;
 }
 
 #pragma mark - UIActionSheetDelegate

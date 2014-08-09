@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddPostViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate>
+@interface AddPostViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
 
 @end
