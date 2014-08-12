@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="1553" y="-1379"/>
         </scene>
-        <!--Dummy View Controller - Trending-->
+        <!--Dummy View Controller - Buddies-->
         <scene sceneID="7BM-QW-0ID">
             <objects>
                 <viewController id="E8h-qf-yav" customClass="DummyViewController" sceneMemberID="viewController">
@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trending" image="tab_icon_trending" id="ga9-rt-hhy"/>
+                    <tabBarItem key="tabBarItem" title="Buddies" image="tab_ic_buddies" id="ga9-rt-hhy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7i-Nz-XfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -812,9 +812,9 @@
         <image name="default_avatar" width="50" height="50"/>
         <image name="default_image" width="100" height="100"/>
         <image name="tab_ic_alert" width="25" height="25"/>
+        <image name="tab_ic_buddies" width="22" height="22"/>
         <image name="tab_ic_menu" width="25" height="25"/>
         <image name="tab_icon_hot" width="25" height="25"/>
-        <image name="tab_icon_trending" width="25" height="25"/>
         <image name="tab_icon_user" width="25" height="25"/>
         <image name="thumb_down" width="50" height="50"/>
         <image name="thumb_up" width="50" height="50"/>

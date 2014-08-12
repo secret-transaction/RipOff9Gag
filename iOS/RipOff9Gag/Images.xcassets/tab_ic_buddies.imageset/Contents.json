@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "tab_ic_trending@25x25.png"
+      "filename" : "buddies.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "tab_ic_trending@50x50.png"
+      "filename" : "buddies@2x.png"
     }
   ],
   "info" : {

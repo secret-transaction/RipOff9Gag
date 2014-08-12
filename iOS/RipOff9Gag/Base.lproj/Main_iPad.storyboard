@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-2097" y="270"/>
         </scene>
-        <!--Dummy View Controller - Trending-->
+        <!--Dummy View Controller - Buddies-->
         <scene sceneID="04S-gQ-Yq7">
             <objects>
                 <viewController id="amA-Jj-bA1" customClass="DummyViewController" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trending" image="tab_icon_trending" id="SvD-Vk-SJN"/>
+                    <tabBarItem key="tabBarItem" title="Buddies" image="tab_ic_buddies" id="SvD-Vk-SJN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdF-I5-ksg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,9 +124,9 @@
     </scenes>
     <resources>
         <image name="tab_ic_alert" width="25" height="25"/>
+        <image name="tab_ic_buddies" width="22" height="22"/>
         <image name="tab_ic_menu" width="25" height="25"/>
         <image name="tab_icon_hot" width="25" height="25"/>
-        <image name="tab_icon_trending" width="25" height="25"/>
         <image name="tab_icon_user" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
