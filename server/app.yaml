@@ -9,6 +9,9 @@ handlers:
 - url: /_ah/spi/.*
   script: ripoff9gag.api.APPLICATION
 
+- url: /temp/images
+  static_dir: temp/images
+
 - url: /.*
   script: main.app
 

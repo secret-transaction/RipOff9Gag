@@ -3,6 +3,7 @@ import logging
 from api_common import *
 from protorpc import messages
 from protorpc import remote
+from random import randint
 
 '''
 Endpoint DTOs
@@ -44,14 +45,20 @@ class PostsAPI(remote.Service):
         logging.info('listing ' + str(request.type))
 
         user1 = UserAccount(userId='1', username='test1')
-        post1 = UserPost(owner=user1, points=1)
+        time = 1
+        post_list = []
 
-        user2 = UserAccount(userId='2', username='test2')
-        post2 = UserPost(owner=user2, points=1)
+        for i in range(0, request.pageSize):
+            post = UserPost(postId=str(time+i), owner=user1, points=1)
 
-        post_list = UserPostListResponse(cursor='test')
-        post_list.posts = [post1, post2]
-        return post_list
+            # https://docs.python.org/2/library/random.html
+            post.imageUrl = 'http://localhost:8080/temp/images/image' + str(randint(0, 9)) + '.jpg'
+
+            post_list.append(post)
+
+        response = UserPostListResponse(cursor='test')
+        response.posts = post_list
+        return response
 
     #guide for posts: https://developers.google.com/appengine/docs/python/endpoints/getstarted/backend/write_api_post
     @endpoints.method(UserPostCreateRequest, UserPostCreateResponse, path='create', http_method='POST', name='create')
