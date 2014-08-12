@@ -1,9 +1,8 @@
 import endpoints
 import logging
 from api_common import *
-from protorpc import messages
+from random import *
 from protorpc import remote
-from random import randint
 
 '''
 Endpoint DTOs
@@ -52,8 +51,10 @@ class PostsAPI(remote.Service):
             post = UserPost(postId=str(time+i), owner=user1, points=1)
 
             # https://docs.python.org/2/library/random.html
-            post.imageUrl = 'http://localhost:8080/temp/images/image' + str(randint(0, 9)) + '.jpg'
-
+            post.imageUrl = 'http://localhost:8080/temp/images/image' + str(randint(1, 9)) + '.jpg'
+            post.commentCount = randint(0, 500)
+            post.isUnsafe = bool(getrandbits(1))
+            post.title = 'Some title ' + str(randint(0, 999))
             post_list.append(post)
 
         response = UserPostListResponse(cursor='test')
