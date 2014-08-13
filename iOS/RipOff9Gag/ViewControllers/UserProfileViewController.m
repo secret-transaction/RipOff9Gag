@@ -25,7 +25,7 @@
     SessionManager *sm = [SessionManager sharedInstance];
     if ([sm hasSession]) {
         NSLog(@"User Already Logged In...");
-        [self performSegueWithIdentifier:SegueUserProfileDisplay sender:self];
+        [self performSegueWithIdentifier:kSegueUserProfileDisplay sender:self];
     }
 
 }

@@ -10,17 +10,17 @@
 #define RipOff9Gag_constants_h
 
 //table view cells id
-static NSString *const TVCUserPost = @"TVCUserPost";
+static NSString *const kTVCUserPost = @"TVCUserPost";
 
 //entity names
-static NSString *const EntityUserPost = @"UserPost";
+static NSString *const kEntityUserPost = @"UserPost";
 
 //segues Segue<VCName without "ViewController">
-static NSString *const SegueUserRegistration = @"SegueUserRegistration";
-static NSString *const SegueUserProfileDisplay = @"SegueUserProfileDisplay";
-static NSString *const SegueAddPost = @"SegueAddPost";
+static NSString *const kSegueUserRegistration = @"SegueUserRegistration";
+static NSString *const kSegueUserProfileDisplay = @"SegueUserProfileDisplay";
+static NSString *const kSegueAddPost = @"SegueAddPost";
 
 //unwind segues UnwindSegue<VCName without "ViewController">
-static NSString *const UnwindSegueUserProfile = @"UnwindSegueUserProfile";
+static NSString *const kUnwindSegueUserProfile = @"UnwindSegueUserProfile";
 
 #endif

@@ -37,7 +37,7 @@
 {
     NSLog(@"Add Post");
     //TODO: perform check if user has logged in
-    [self performSegueWithIdentifier:SegueAddPost sender:self];
+    [self performSegueWithIdentifier:kSegueAddPost sender:self];
 }
 
 - (void)refreshTable
@@ -75,7 +75,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TVCUserPost forIndexPath:indexPath];
+    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCUserPost forIndexPath:indexPath];
     
     UserPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.title.text = userPost.title;
@@ -92,7 +92,7 @@
     }
     
     NSFetchRequest *request = [NSFetchRequest new];
-    [request setEntity:[NSEntityDescription entityForName:EntityUserPost inManagedObjectContext:self.context]];
+    [request setEntity:[NSEntityDescription entityForName:kEntityUserPost inManagedObjectContext:self.context]];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     request.sortDescriptors = @[sortDescriptor];
     
