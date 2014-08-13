@@ -7,6 +7,9 @@
 //
 
 #import "PostsTableViewController.h"
+#import "DataManager.h"
+#import "PostTableViewCell.h"
+#import "UserPost.h"
 
 @interface PostsTableViewController ()
 
@@ -21,6 +24,8 @@
     if (self.title) {
         self.navigationItem.title = self.title;
     }
+    
+    self.context =  [[DataManager sharedInstance] managedObjectContext];
     
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPost)];
     UIBarButtonItem *refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTable)];
@@ -44,28 +49,48 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TVCUserPost forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    UserPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.title.text = userPost.title;
     return cell;
 }
-*/
+
+#pragma mark - Fetched Results Controller
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *request = [NSFetchRequest new];
+    [request setEntity:[NSEntityDescription entityForName:EntityUserPost inManagedObjectContext:self.context]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
+    request.sortDescriptors = @[sortDescriptor];
+    
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.context sectionNameKeyPath:@"title" cacheName:@"Master"];
+    
+    NSError *error = nil;
+    if (![fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    } else {
+        self.fetchedResultsController = fetchedResultsController;
+    }
+    
+    return _fetchedResultsController;
+}
 
 /*
 // Override to support conditional editing of the table view.

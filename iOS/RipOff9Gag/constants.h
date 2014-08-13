@@ -9,6 +9,12 @@
 #ifndef RipOff9Gag_constants_h
 #define RipOff9Gag_constants_h
 
+//table view cells id
+static NSString *const TVCUserPost = @"TVCUserPost";
+
+//entity names
+static NSString *const EntityUserPost = @"UserPost";
+
 //segues Segue<VCName without "ViewController">
 static NSString *const SegueUserRegistration = @"SegueUserRegistration";
 static NSString *const SegueUserProfileDisplay = @"SegueUserProfileDisplay";

@@ -11,6 +11,12 @@
 		E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F52198DE5150077F661 /* LoginViewController.m */; };
 		E92E3F57198E39070077F661 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F56198E39070077F661 /* SessionManager.m */; };
 		E92E3F5A198E6F370077F661 /* UserProfileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */; };
+		E9370A95199BBC4A00F7E6C7 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9370A94199BBC4A00F7E6C7 /* PostTableViewCell.m */; };
+		E9370A98199BBDAD00F7E6C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9370A96199BBDAD00F7E6C7 /* Model.xcdatamodeld */; };
+		E9370A9B199BBE8300F7E6C7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9370A9A199BBE8300F7E6C7 /* DataManager.m */; };
+		E9370A9D199BBEAB00F7E6C7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9370A9C199BBEAB00F7E6C7 /* CoreData.framework */; };
+		E9370AAA199BC49300F7E6C7 /* UserPost.m in Sources */ = {isa = PBXBuildFile; fileRef = E9370AA9199BC49300F7E6C7 /* UserPost.m */; };
+		E9370AAD199BC68E00F7E6C7 /* AsyncImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9370AAC199BC68E00F7E6C7 /* AsyncImageDownloader.m */; };
 		E93E3BBC19878F2100056E0A /* GTLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAB19878F2100056E0A /* GTLObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBD19878F2100056E0A /* GTLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAD19878F2100056E0A /* GTLQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E93E3BBE19878F2100056E0A /* GTLBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E3BAF19878F2100056E0A /* GTLBatchQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -100,6 +106,16 @@
 		E92E3F56198E39070077F661 /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
 		E92E3F58198E6F370077F661 /* UserProfileDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileDisplayViewController.h; sourceTree = "<group>"; };
 		E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileDisplayViewController.m; sourceTree = "<group>"; };
+		E9370A93199BBC4A00F7E6C7 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		E9370A94199BBC4A00F7E6C7 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		E9370A97199BBDAD00F7E6C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E9370A99199BBE8300F7E6C7 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		E9370A9A199BBE8300F7E6C7 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		E9370A9C199BBEAB00F7E6C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E9370AA8199BC49300F7E6C7 /* UserPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPost.h; sourceTree = "<group>"; };
+		E9370AA9199BC49300F7E6C7 /* UserPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPost.m; sourceTree = "<group>"; };
+		E9370AAB199BC68E00F7E6C7 /* AsyncImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageDownloader.h; sourceTree = "<group>"; };
+		E9370AAC199BC68E00F7E6C7 /* AsyncImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageDownloader.m; sourceTree = "<group>"; };
 		E93E3BAA19878F2100056E0A /* GTLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLObject.h; sourceTree = "<group>"; };
 		E93E3BAB19878F2100056E0A /* GTLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLObject.m; sourceTree = "<group>"; };
 		E93E3BAC19878F2100056E0A /* GTLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLQuery.h; sourceTree = "<group>"; };
@@ -238,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9370A9D199BBEAB00F7E6C7 /* CoreData.framework in Frameworks */,
 				E99EBD2A19824B50000AE890 /* CoreGraphics.framework in Frameworks */,
 				E99EBD2C19824B50000AE890 /* UIKit.framework in Frameworks */,
 				E99EBD2819824B50000AE890 /* Foundation.framework in Frameworks */,
@@ -260,6 +277,10 @@
 		E92E3F54198E38B20077F661 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E9370AAB199BC68E00F7E6C7 /* AsyncImageDownloader.h */,
+				E9370AAC199BC68E00F7E6C7 /* AsyncImageDownloader.m */,
+				E9370A99199BBE8300F7E6C7 /* DataManager.h */,
+				E9370A9A199BBE8300F7E6C7 /* DataManager.m */,
 				E92E3F55198E39070077F661 /* SessionManager.h */,
 				E92E3F56198E39070077F661 /* SessionManager.m */,
 			);
@@ -279,6 +300,24 @@
 				E92E3F52198DE5150077F661 /* LoginViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		E9370A92199BBBCD00F7E6C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9370A93199BBC4A00F7E6C7 /* PostTableViewCell.h */,
+				E9370A94199BBC4A00F7E6C7 /* PostTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9370AA1199BC04300F7E6C7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E9370AA8199BC49300F7E6C7 /* UserPost.h */,
+				E9370AA9199BC49300F7E6C7 /* UserPost.m */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		E93E3BA819878E8000056E0A /* RemoteClient */ = {
@@ -486,6 +525,7 @@
 		E99EBD2619824B50000AE890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9370A9C199BBEAB00F7E6C7 /* CoreData.framework */,
 				E99EBD2719824B50000AE890 /* Foundation.framework */,
 				E99EBD2919824B50000AE890 /* CoreGraphics.framework */,
 				E99EBD2B19824B50000AE890 /* UIKit.framework */,
@@ -497,12 +537,15 @@
 		E99EBD2D19824B50000AE890 /* RipOff9Gag */ = {
 			isa = PBXGroup;
 			children = (
+				E9370AA1199BC04300F7E6C7 /* Entities */,
 				E93E3BA819878E8000056E0A /* RemoteClient */,
 				E9D3861B198290AD005A764B /* ViewControllers */,
+				E9370A92199BBBCD00F7E6C7 /* Views */,
 				E92E3F54198E38B20077F661 /* Utils */,
 				E99EBD3619824B50000AE890 /* AppDelegate.h */,
 				E99EBD3719824B50000AE890 /* AppDelegate.m */,
 				E99EBD3919824B50000AE890 /* Main_iPhone.storyboard */,
+				E9370A96199BBDAD00F7E6C7 /* Model.xcdatamodeld */,
 				E99EBD3C19824B50000AE890 /* Main_iPad.storyboard */,
 				E99EBD4519824B50000AE890 /* Images.xcassets */,
 				E99EBD2E19824B50000AE890 /* Supporting Files */,
@@ -675,7 +718,9 @@
 				E93E3BEA19878F7B00056E0A /* GTMReadMonitorInputStream.m in Sources */,
 				E93E3C32198790EC00056E0A /* GTLReactionApiCommentsCommentCreateRequest.m in Sources */,
 				E93E3BC319878F2100056E0A /* GTLErrorObject.m in Sources */,
+				E9370A95199BBC4A00F7E6C7 /* PostTableViewCell.m in Sources */,
 				E93E3C4B198790F800056E0A /* GTLServiceUser.m in Sources */,
+				E9370A9B199BBE8300F7E6C7 /* DataManager.m in Sources */,
 				E93E3BBF19878F2100056E0A /* GTLService.m in Sources */,
 				E9568CBA198A89C600FDA6E9 /* UserProfileViewController.m in Sources */,
 				E93E3BCA19878F3C00056E0A /* GTMOAuth2Authentication.m in Sources */,
@@ -687,6 +732,7 @@
 				E93E3BE819878F7B00056E0A /* GTMGatherInputStream.m in Sources */,
 				E93E3BF919878FA400056E0A /* GTLBase64.m in Sources */,
 				E93E3C37198790EC00056E0A /* GTLReactionApiCommonUserAuthentication.m in Sources */,
+				E9370AAD199BC68E00F7E6C7 /* AsyncImageDownloader.m in Sources */,
 				E93E3BC219878F2100056E0A /* GTLDateTime.m in Sources */,
 				E93E3BF619878FA400056E0A /* GTLFramework.m in Sources */,
 				E93E3C1B198790DF00056E0A /* GTLServicePost.m in Sources */,
@@ -695,12 +741,14 @@
 				E93E3C36198790EC00056E0A /* GTLReactionApiCommentsVoteResponse.m in Sources */,
 				E93E3C33198790EC00056E0A /* GTLReactionApiCommentsCommentCreateResponse.m in Sources */,
 				E93E3C34198790EC00056E0A /* GTLReactionApiCommentsCommentListResponse.m in Sources */,
+				E9370AAA199BC49300F7E6C7 /* UserPost.m in Sources */,
 				E93E3C4E198790F800056E0A /* GTLUserApiUserUserLoginResponse.m in Sources */,
 				E93E3BD019878F5B00056E0A /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				E93E3BC019878F2100056E0A /* GTLBatchResult.m in Sources */,
 				E93E3BE919878F7B00056E0A /* GTMMIMEDocument.m in Sources */,
 				E93E3C4F198790F800056E0A /* GTLUserApiUserUserRegistrationRequest.m in Sources */,
 				E93E3C13198790DF00056E0A /* GTLPostApiCommonUserAccount.m in Sources */,
+				E9370A98199BBDAD00F7E6C7 /* Model.xcdatamodeld in Sources */,
 				E93E3BBD19878F2100056E0A /* GTLQuery.m in Sources */,
 				E93E3BE319878F7B00056E0A /* GTMHTTPFetcherService.m in Sources */,
 				E93E3BF819878FA400056E0A /* GTLUtilities.m in Sources */,
@@ -947,6 +995,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9370A96199BBDAD00F7E6C7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9370A97199BBDAD00F7E6C7 /* Model.xcdatamodel */,
+			);
+			currentVersion = E9370A97199BBDAD00F7E6C7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E99EBD1C19824B50000AE890 /* Project object */;
 }

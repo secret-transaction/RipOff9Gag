@@ -11,5 +11,7 @@
 @interface PostsTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
