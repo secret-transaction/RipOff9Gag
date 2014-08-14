@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "PostTableViewCell.h"
 #import "UserPost.h"
+#import "AsyncImageDownloader.h"
 
 @interface PostsTableViewController ()
 
@@ -88,6 +89,9 @@
     
     UserPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.titleLabel.text = userPost.title;
+    
+    [AsyncImageDownloader loadFromURL:userPost.imageUrl toImageView:cell.image];
+    NSLog(@"Image:%@", userPost.imageUrl);
     
     return cell;
 }
