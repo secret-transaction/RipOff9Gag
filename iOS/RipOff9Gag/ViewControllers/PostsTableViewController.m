@@ -53,6 +53,15 @@
     [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLPostApiPostsUserPostListResponse *response, NSError *error) {
         if (!error) {
             NSLog(@"Listing Posts Success");
+            
+            for (GTLPostApiCommonUserPost *post in response.posts) {
+                NSLog(@"Got Post:%@", post.postId);
+                UserPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityUserPost inManagedObjectContext:self.context];
+                postEntity.title = post.title;
+                postEntity.imageUrl = post.imageUrl;
+            }
+            
+            [[DataManager sharedInstance] saveContext];
         } else {
             NSLog(@"Login Failed:%@", error);
         }
@@ -78,7 +87,7 @@
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCUserPost forIndexPath:indexPath];
     
     UserPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.title.text = userPost.title;
+    cell.titleLabel.text = userPost.title;
     
     return cell;
 }

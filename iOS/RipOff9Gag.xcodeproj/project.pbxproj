@@ -545,8 +545,8 @@
 				E99EBD3619824B50000AE890 /* AppDelegate.h */,
 				E99EBD3719824B50000AE890 /* AppDelegate.m */,
 				E99EBD3919824B50000AE890 /* Main_iPhone.storyboard */,
-				E9370A96199BBDAD00F7E6C7 /* Model.xcdatamodeld */,
 				E99EBD3C19824B50000AE890 /* Main_iPad.storyboard */,
+				E9370A96199BBDAD00F7E6C7 /* Model.xcdatamodeld */,
 				E99EBD4519824B50000AE890 /* Images.xcassets */,
 				E99EBD2E19824B50000AE890 /* Supporting Files */,
 			);
