@@ -51,7 +51,7 @@ class PostsAPI(remote.Service):
             post = UserPost(postId=str(time+i), owner=user1, points=1)
 
             # https://docs.python.org/2/library/random.html
-            post.imageUrl = 'http://localhost:8080/temp/images/image' + str(randint(1, 9)) + '.jpg'
+            post.imageUrl = 'https://rogag-server.appspot.com/temp/images/image' + str(randint(1, 9)) + '.jpg'
             post.commentCount = randint(0, 500)
             post.isUnsafe = bool(getrandbits(1))
             post.title = 'Some title ' + str(randint(0, 999))
