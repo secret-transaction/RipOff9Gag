@@ -8,10 +8,6 @@ import com.secrettransaction.rogagserver.api.dto.UserLoginResponse;
 import com.secrettransaction.rogagserver.api.dto.UserRegistrationRequest;
 import com.secrettransaction.rogagserver.api.dto.UserRegistrationResponse;
 
-/**
-  * Add your first API methods in this class, or you may create another class. In that case, please
-  * update your web.xml accordingly.
- **/
 @Api(name="user", version="v1", description="Rogag API for User Management")
 public class UserAPI {
 	
