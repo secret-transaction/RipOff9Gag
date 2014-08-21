@@ -30,4 +30,9 @@ public class UserPostListRequest {
 		this.pageSize = pageSize;
 	}
 
+	@Override
+	public String toString() {
+		return "UserPostListRequest [cursor=" + cursor + ", type=" + type + ", pageSize=" + pageSize + "]";
+	}
+
 }

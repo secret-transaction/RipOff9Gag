@@ -45,15 +45,16 @@
     self.doneButton.enabled = NO;
     GTLServiceUser *userService = [GTLServiceUser new];
     
-    GTLUserApiUserUserRegistrationRequest *request = [GTLUserApiUserUserRegistrationRequest new];
-    request.fullName = self.fullName.text;
+    GTLUserRegistrationRequest *request = [GTLUserRegistrationRequest new];
+    request.firstName = self.fullName.text;
+    request.lastName = self.fullName.text;
     request.email = self.email.text;
     request.password = self.password.text;
     NSLog(@"Request:%@", request);
     
     GTLQueryUser *query = [GTLQueryUser queryForCreateWithObject:request];
     
-    [userService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserApiUserUserRegistrationResponse *response, NSError *error) {
+    [userService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserRegistrationResponse *response, NSError *error) {
         NSLog(@"done:%@", response.userId);
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }];

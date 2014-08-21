@@ -18,4 +18,5 @@
     #import "GTLUser.h"
     #import "GTLReaction.h"
     #import "GTLPost.h"
+    #import "GTLImage.h"
 #endif

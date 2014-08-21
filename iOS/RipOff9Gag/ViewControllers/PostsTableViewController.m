@@ -47,15 +47,18 @@
     
     GTLServicePost *service = [GTLServicePost new];
     
-    GTLQueryPost *query = [GTLQueryPost queryForListWithType:kGTLPostTypeHot];
-    query.cursor = @"";
-    query.pageSize = 10L;
+    GTLPostUserPostListRequest *request = [GTLPostUserPostListRequest new];
+    request.cursor = @"";
+    request.pageSize = @10L;
     
-    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLPostApiPostsUserPostListResponse *response, NSError *error) {
+    GTLQueryPost *query = [GTLQueryPost queryForListWithObject:request];
+    
+    
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLPostUserPostListResponse *response, NSError *error) {
         if (!error) {
             NSLog(@"Listing Posts Success");
             
-            for (GTLPostApiCommonUserPost *post in response.posts) {
+            for (GTLPostUserPost *post in response.posts) {
                 NSLog(@"Got Post:%@", post.postId);
                 UserPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityUserPost inManagedObjectContext:self.context];
                 postEntity.title = post.title;

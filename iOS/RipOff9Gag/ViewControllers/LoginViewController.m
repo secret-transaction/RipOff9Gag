@@ -43,13 +43,14 @@
     self.done.enabled = NO;
     GTLServiceUser *service = [GTLServiceUser new];
     
-    GTLUserApiUserUserLoginRequest *request = [GTLUserApiUserUserLoginRequest new];
+    GTLUserLoginRequest *request = [GTLUserLoginRequest new];
+    request.loginType = @"USERNAME"; //TODO: candidate for a constant
     request.username = self.username.text;
     request.password = self.password.text;
     
     GTLQueryUser *query = [GTLQueryUser queryForLoginWithObject:request];
     
-    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserApiUserUserLoginResponse *response, NSError *error) {
+    [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLUserLoginResponse *response, NSError *error) {
         if (!error) {
             NSLog(@"Login Success:%@, %@", response.userId, response.userToken);
             

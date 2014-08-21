@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C3BE2685-693F-4946-9337-D9DB10D2E715</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RipOff9Gag</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E636BFE6-8566-45D9-B2D0-5DC3552FF05F</key>
+		<string>ssh://github.com/secret-transaction/RipOff9Gag.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RipOff9Gag/RipOff9Gag.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E636BFE6-8566-45D9-B2D0-5DC3552FF05F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/secret-transaction/RipOff9Gag.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E636BFE6-8566-45D9-B2D0-5DC3552FF05F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E636BFE6-8566-45D9-B2D0-5DC3552FF05F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RipOff9Gag</string>
+		</dict>
+	</array>
+</dict>
+</plist>
