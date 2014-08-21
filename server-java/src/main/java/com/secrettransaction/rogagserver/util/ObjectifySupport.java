@@ -8,6 +8,7 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.ObjectifyService;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.AppUserAccount;
+import com.secrettransaction.rogagserver.entity.AppUserLogin;
 
 public class ObjectifySupport {
 	
@@ -17,6 +18,7 @@ public class ObjectifySupport {
 		log.config("Registering Entities:");
 		ObjectifyService.register(AppUser.class);
 		ObjectifyService.register(AppUserAccount.class);
+		ObjectifyService.register(AppUserLogin.class);
 	}
 	
 	public static<T> Key<T> save(T entity) {

@@ -1,6 +1,6 @@
 package com.secrettransaction.rogagserver.api.dto;
 
-public class GetUrlResponse {
+public class GetUrlResponse extends BaseReponse {
 
 	private String uploadUrl;
 	private String downloadUrl;

@@ -1,13 +1,16 @@
 package com.secrettransaction.rogagserver;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
 import static com.secrettransaction.rogagserver.util.ObjectifySupport.save;
 
+import java.util.Date;
 import java.util.logging.Logger;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.googlecode.objectify.Key;
+import com.googlecode.objectify.cmd.Query;
 import com.secrettransaction.rogagserver.api.dto.AppError;
 import com.secrettransaction.rogagserver.api.dto.UserLoginRequest;
 import com.secrettransaction.rogagserver.api.dto.UserLoginResponse;
@@ -15,6 +18,8 @@ import com.secrettransaction.rogagserver.api.dto.UserRegistrationRequest;
 import com.secrettransaction.rogagserver.api.dto.UserRegistrationResponse;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.AppUserAccount;
+import com.secrettransaction.rogagserver.entity.AppUserLogin;
+import com.secrettransaction.rogagserver.util.AccessTokenGenerator;
 import com.secrettransaction.rogagserver.util.PasswordEncryption;
 import com.secrettransaction.rogagserver.util.SimpleValidatorUtil;
 
@@ -70,10 +75,42 @@ public class UserAPI {
 	
 	@ApiMethod(name="login", httpMethod=HttpMethod.PUT, path="login")
 	public UserLoginResponse login(UserLoginRequest request) {
-		
+		log.config("logging in:" + request);
 		UserLoginResponse response = new UserLoginResponse();
-		response.setUserId("1111");
-		response.setUserToken("token");
+		
+		Query<AppUserAccount> loginQuery = ofy().load().type(AppUserAccount.class).
+				filter("type", request.getLoginType()).
+				filter("username", request.getUsername());
+		
+		AppUserAccount account = loginQuery.first().now();
+		
+		if (account==null) {
+			AppError accountDoesNotExist = new AppError(ErrorConstants.CODE_ACCOUNT_DOES_NOT_EXIST, ErrorConstants.MESSAGE_ACCOUNT_DOES_NOT_EXIST);
+			response.getAppErrors().add(accountDoesNotExist);
+		} else if(account.getPassword()!=null && !account.getPassword().equals(PasswordEncryption.encrypt(request.getPassword()))) {
+			AppError incorrectPassword = new AppError(ErrorConstants.CODE_ACCOUNT_INCORRECT_PASSWORD, ErrorConstants.MESSAGE_ACCOUNT_INCORRECT_PASSWORD);
+			response.getAppErrors().add(incorrectPassword);
+		}
+		
+		if (response.getAppErrors().isEmpty()) {
+			
+			AppUserLogin login = new AppUserLogin();
+			login.setClientId(request.getClientId());
+			login.setClientDevice(request.getClientDevice());
+			login.setClientOS(request.getClientOS());
+			login.setClientVersion(request.getClientOSVersion());
+			login.setClientVersion(request.getClientVersion());
+			login.setClientVersionId(request.getClientVersionId());
+			login.setAccessToken(AccessTokenGenerator.generate(request.getUsername()+request.getPassword())); //TODO: generate access token
+			login.setLoginDate(new Date());
+			login.setLastAccessedDate(new Date());
+			login.setUserKey(account.getUserKey());
+			login.setUserAccountKey(account.key());
+			save(login);
+
+			response.setUserId(account.getUserKey().getId()+"");
+			response.setUserToken(login.getAccessToken());
+		}
 		
 		return response;
 	}

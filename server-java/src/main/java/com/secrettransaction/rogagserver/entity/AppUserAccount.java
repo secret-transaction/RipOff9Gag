@@ -77,4 +77,8 @@ public class AppUserAccount {
 	private void updateId() {
 		this.id = String.format("%s_%s", type, username);
 	}
+
+	public Key<AppUserAccount> key() {
+		return Key.create(AppUserAccount.class, id);
+	}
 }

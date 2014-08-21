@@ -4,6 +4,12 @@ public class AppError {
 
 	private String errorCode;
 	private String errorMessage;
+	
+	public AppError() {}
+	public AppError(String errorCode, String errorMessage) {
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
+	}
 
 	public String getErrorCode() {
 		return errorCode;
