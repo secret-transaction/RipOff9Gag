@@ -21,8 +21,8 @@
   #import "GTLQuery.h"
 #endif
 
-@class GTLUserApiUserUserLoginRequest;
-@class GTLUserApiUserUserRegistrationRequest;
+@class GTLUserLoginRequest;
+@class GTLUserRegistrationRequest;
 
 @interface GTLQueryUser : GTLQuery
 
@@ -40,13 +40,13 @@
 // Method: user.create
 //  Authorization scope(s):
 //   kGTLAuthScopeUserUserinfoEmail
-// Fetches a GTLUserApiUserUserRegistrationResponse.
-+ (id)queryForCreateWithObject:(GTLUserApiUserUserRegistrationRequest *)object;
+// Fetches a GTLUserRegistrationResponse.
++ (id)queryForCreateWithObject:(GTLUserRegistrationRequest *)object;
 
 // Method: user.login
 //  Authorization scope(s):
 //   kGTLAuthScopeUserUserinfoEmail
-// Fetches a GTLUserApiUserUserLoginResponse.
-+ (id)queryForLoginWithObject:(GTLUserApiUserUserLoginRequest *)object;
+// Fetches a GTLUserLoginResponse.
++ (id)queryForLoginWithObject:(GTLUserLoginRequest *)object;
 
 @end

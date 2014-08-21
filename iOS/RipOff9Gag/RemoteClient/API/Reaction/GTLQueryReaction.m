@@ -13,25 +13,26 @@
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLQueryReaction (3 custom class methods, 3 custom properties)
+//   GTLQueryReaction (3 custom class methods, 1 custom properties)
 
 #import "GTLQueryReaction.h"
 
-#import "GTLReactionApiCommentsCommentCreateRequest.h"
-#import "GTLReactionApiCommentsCommentCreateResponse.h"
-#import "GTLReactionApiCommentsCommentListResponse.h"
-#import "GTLReactionApiCommentsVoteRequest.h"
-#import "GTLReactionApiCommentsVoteResponse.h"
+#import "GTLReactionCommentCreateRequest.h"
+#import "GTLReactionCommentCreateResponse.h"
+#import "GTLReactionCommentListRequest.h"
+#import "GTLReactionCommentListResponse.h"
+#import "GTLReactionVoteRequest.h"
+#import "GTLReactionVoteResponse.h"
 
 @implementation GTLQueryReaction
 
-@dynamic cursor, fields, pageSize;
+@dynamic fields;
 
 #pragma mark -
 #pragma mark "comment" methods
 // These create a GTLQueryReaction object.
 
-+ (id)queryForCommentCreateWithObject:(GTLReactionApiCommentsCommentCreateRequest *)object {
++ (id)queryForCommentCreateWithObject:(GTLReactionCommentCreateRequest *)object {
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -39,14 +40,19 @@
   NSString *methodName = @"reaction.comment.create";
   GTLQueryReaction *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
-  query.expectedObjectClass = [GTLReactionApiCommentsCommentCreateResponse class];
+  query.expectedObjectClass = [GTLReactionCommentCreateResponse class];
   return query;
 }
 
-+ (id)queryForCommentList {
++ (id)queryForCommentListWithObject:(GTLReactionCommentListRequest *)object {
+  if (object == nil) {
+    GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
+    return nil;
+  }
   NSString *methodName = @"reaction.comment.list";
   GTLQueryReaction *query = [self queryWithMethodName:methodName];
-  query.expectedObjectClass = [GTLReactionApiCommentsCommentListResponse class];
+  query.bodyObject = object;
+  query.expectedObjectClass = [GTLReactionCommentListResponse class];
   return query;
 }
 
@@ -54,7 +60,7 @@
 #pragma mark Service level methods
 // These create a GTLQueryReaction object.
 
-+ (id)queryForVoteWithObject:(GTLReactionApiCommentsVoteRequest *)object {
++ (id)queryForVoteWithObject:(GTLReactionVoteRequest *)object {
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -62,7 +68,7 @@
   NSString *methodName = @"reaction.vote";
   GTLQueryReaction *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
-  query.expectedObjectClass = [GTLReactionApiCommentsVoteResponse class];
+  query.expectedObjectClass = [GTLReactionVoteResponse class];
   return query;
 }
 

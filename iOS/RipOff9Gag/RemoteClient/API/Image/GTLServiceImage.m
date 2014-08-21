@@ -3,33 +3,32 @@
  */
 
 //
-//  GTLServiceUser.m
+//  GTLServiceImage.m
 //
 
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   user/v1
+//   image/v1
 // Description:
-//   Rogag API for User Management
+//   Rogag API for Images
 // Classes:
-//   GTLServiceUser (0 custom class methods, 0 custom properties)
+//   GTLServiceImage (0 custom class methods, 0 custom properties)
 
-#import "GTLUser.h"
+#import "GTLImage.h"
 
-@implementation GTLServiceUser
+@implementation GTLServiceImage
 
 #if DEBUG
 // Method compiled in debug builds just to check that all the needed support
 // classes are present at link time.
 + (NSArray *)checkClasses {
   NSArray *classes = [NSArray arrayWithObjects:
-                      [GTLQueryUser class],
-                      [GTLUserAppError class],
-                      [GTLUserLoginRequest class],
-                      [GTLUserLoginResponse class],
-                      [GTLUserRegistrationRequest class],
-                      [GTLUserRegistrationResponse class],
+                      [GTLQueryImage class],
+                      [GTLImageAppError class],
+                      [GTLImageGetUrlRequest class],
+                      [GTLImageGetUrlResponse class],
+                      [GTLImageUserAuthentication class],
                       nil];
   return classes;
 }

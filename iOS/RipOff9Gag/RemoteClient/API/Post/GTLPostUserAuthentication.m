@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLPost.h
+//  GTLPostUserAuthentication.m
 //
 
 // ----------------------------------------------------------------------------
@@ -12,16 +12,16 @@
 //   post/v1
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
+// Classes:
+//   GTLPostUserAuthentication (0 custom class methods, 2 custom properties)
 
-#import "GTLPostConstants.h"
-
-#import "GTLPostUserAccount.h"
 #import "GTLPostUserAuthentication.h"
-#import "GTLPostUserPost.h"
-#import "GTLPostUserPostCreateRequest.h"
-#import "GTLPostUserPostCreateResponse.h"
-#import "GTLPostUserPostListRequest.h"
-#import "GTLPostUserPostListResponse.h"
 
-#import "GTLQueryPost.h"
-#import "GTLServicePost.h"
+// ----------------------------------------------------------------------------
+//
+//   GTLPostUserAuthentication
+//
+
+@implementation GTLPostUserAuthentication
+@dynamic userId, userToken;
+@end

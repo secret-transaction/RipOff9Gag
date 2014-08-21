@@ -25,12 +25,13 @@
 + (NSArray *)checkClasses {
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryReaction class],
-                      [GTLReactionApiCommentsCommentCreateRequest class],
-                      [GTLReactionApiCommentsCommentCreateResponse class],
-                      [GTLReactionApiCommentsCommentListResponse class],
-                      [GTLReactionApiCommentsVoteRequest class],
-                      [GTLReactionApiCommentsVoteResponse class],
-                      [GTLReactionApiCommonUserAuthentication class],
+                      [GTLReactionCommentCreateRequest class],
+                      [GTLReactionCommentCreateResponse class],
+                      [GTLReactionCommentListRequest class],
+                      [GTLReactionCommentListResponse class],
+                      [GTLReactionComments class],
+                      [GTLReactionVoteRequest class],
+                      [GTLReactionVoteResponse class],
                       nil];
   return classes;
 }
@@ -45,7 +46,7 @@
     // From discovery.  Where to send JSON-RPC.
     // Turn off prettyPrint for this service to save bandwidth (especially on
     // mobile). The fetcher logging will pretty print.
-    self.rpcURL = [NSURL URLWithString:@"https://rogag-server.appspot.com/_ah/api/rpc?prettyPrint=false"];
+    self.rpcURL = [NSURL URLWithString:@"https://rogag-server-stage.appspot.com/_ah/api/rpc?prettyPrint=false"];
   }
   return self;
 }

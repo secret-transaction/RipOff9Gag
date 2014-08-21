@@ -13,23 +13,24 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLQueryPost (2 custom class methods, 4 custom properties)
+//   GTLQueryPost (2 custom class methods, 1 custom properties)
 
 #import "GTLQueryPost.h"
 
-#import "GTLPostApiPostsUserPostCreateRequest.h"
-#import "GTLPostApiPostsUserPostCreateResponse.h"
-#import "GTLPostApiPostsUserPostListResponse.h"
+#import "GTLPostUserPostCreateRequest.h"
+#import "GTLPostUserPostCreateResponse.h"
+#import "GTLPostUserPostListRequest.h"
+#import "GTLPostUserPostListResponse.h"
 
 @implementation GTLQueryPost
 
-@dynamic cursor, fields, pageSize, type;
+@dynamic fields;
 
 #pragma mark -
 #pragma mark Service level methods
 // These create a GTLQueryPost object.
 
-+ (id)queryForCreateWithObject:(GTLPostApiPostsUserPostCreateRequest *)object {
++ (id)queryForCreateWithObject:(GTLPostUserPostCreateRequest *)object {
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -37,15 +38,19 @@
   NSString *methodName = @"post.create";
   GTLQueryPost *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
-  query.expectedObjectClass = [GTLPostApiPostsUserPostCreateResponse class];
+  query.expectedObjectClass = [GTLPostUserPostCreateResponse class];
   return query;
 }
 
-+ (id)queryForListWithType:(NSString *)type {
++ (id)queryForListWithObject:(GTLPostUserPostListRequest *)object {
+  if (object == nil) {
+    GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
+    return nil;
+  }
   NSString *methodName = @"post.list";
   GTLQueryPost *query = [self queryWithMethodName:methodName];
-  query.type = type;
-  query.expectedObjectClass = [GTLPostApiPostsUserPostListResponse class];
+  query.bodyObject = object;
+  query.expectedObjectClass = [GTLPostUserPostListResponse class];
   return query;
 }
 

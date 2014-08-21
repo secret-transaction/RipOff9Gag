@@ -17,10 +17,10 @@
 
 #import "GTLQueryUser.h"
 
-#import "GTLUserApiUserUserLoginRequest.h"
-#import "GTLUserApiUserUserLoginResponse.h"
-#import "GTLUserApiUserUserRegistrationRequest.h"
-#import "GTLUserApiUserUserRegistrationResponse.h"
+#import "GTLUserLoginRequest.h"
+#import "GTLUserLoginResponse.h"
+#import "GTLUserRegistrationRequest.h"
+#import "GTLUserRegistrationResponse.h"
 
 @implementation GTLQueryUser
 
@@ -30,7 +30,7 @@
 #pragma mark Service level methods
 // These create a GTLQueryUser object.
 
-+ (id)queryForCreateWithObject:(GTLUserApiUserUserRegistrationRequest *)object {
++ (id)queryForCreateWithObject:(GTLUserRegistrationRequest *)object {
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -38,11 +38,11 @@
   NSString *methodName = @"user.create";
   GTLQueryUser *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
-  query.expectedObjectClass = [GTLUserApiUserUserRegistrationResponse class];
+  query.expectedObjectClass = [GTLUserRegistrationResponse class];
   return query;
 }
 
-+ (id)queryForLoginWithObject:(GTLUserApiUserUserLoginRequest *)object {
++ (id)queryForLoginWithObject:(GTLUserLoginRequest *)object {
   if (object == nil) {
     GTL_DEBUG_ASSERT(object != nil, @"%@ got a nil object", NSStringFromSelector(_cmd));
     return nil;
@@ -50,7 +50,7 @@
   NSString *methodName = @"user.login";
   GTLQueryUser *query = [self queryWithMethodName:methodName];
   query.bodyObject = object;
-  query.expectedObjectClass = [GTLUserApiUserUserLoginResponse class];
+  query.expectedObjectClass = [GTLUserLoginResponse class];
   return query;
 }
 

@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLReaction.h
+//  GTLReactionCommentCreateRequest.m
 //
 
 // ----------------------------------------------------------------------------
@@ -12,16 +12,15 @@
 //   reaction/v1
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
-
-#import "GTLReactionConstants.h"
+// Classes:
+//   GTLReactionCommentCreateRequest (0 custom class methods, 0 custom properties)
 
 #import "GTLReactionCommentCreateRequest.h"
-#import "GTLReactionCommentCreateResponse.h"
-#import "GTLReactionCommentListRequest.h"
-#import "GTLReactionCommentListResponse.h"
-#import "GTLReactionComments.h"
-#import "GTLReactionVoteRequest.h"
-#import "GTLReactionVoteResponse.h"
 
-#import "GTLQueryReaction.h"
-#import "GTLServiceReaction.h"
+// ----------------------------------------------------------------------------
+//
+//   GTLReactionCommentCreateRequest
+//
+
+@implementation GTLReactionCommentCreateRequest
+@end

@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLUser.h
+//  GTLUserRegistrationRequest.m
 //
 
 // ----------------------------------------------------------------------------
@@ -12,14 +12,16 @@
 //   user/v1
 // Description:
 //   Rogag API for User Management
+// Classes:
+//   GTLUserRegistrationRequest (0 custom class methods, 4 custom properties)
 
-#import "GTLUserConstants.h"
-
-#import "GTLUserAppError.h"
-#import "GTLUserLoginRequest.h"
-#import "GTLUserLoginResponse.h"
 #import "GTLUserRegistrationRequest.h"
-#import "GTLUserRegistrationResponse.h"
 
-#import "GTLQueryUser.h"
-#import "GTLServiceUser.h"
+// ----------------------------------------------------------------------------
+//
+//   GTLUserRegistrationRequest
+//
+
+@implementation GTLUserRegistrationRequest
+@dynamic email, firstName, lastName, password;
+@end

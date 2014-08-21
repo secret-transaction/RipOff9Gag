@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLQueryPost (2 custom class methods, 4 custom properties)
+//   GTLQueryPost (2 custom class methods, 1 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -21,7 +21,8 @@
   #import "GTLQuery.h"
 #endif
 
-@class GTLPostApiPostsUserPostCreateRequest;
+@class GTLPostUserPostCreateRequest;
+@class GTLPostUserPostListRequest;
 
 @interface GTLQueryPost : GTLQuery
 
@@ -32,13 +33,6 @@
 // Selector specifying which fields to include in a partial response.
 @property (copy) NSString *fields;
 
-//
-// Method-specific parameters; see the comments below for more information.
-//
-@property (copy) NSString *cursor;
-@property (assign) long long pageSize;
-@property (copy) NSString *type;
-
 #pragma mark -
 #pragma mark Service level methods
 // These create a GTLQueryPost object.
@@ -46,20 +40,13 @@
 // Method: post.create
 //  Authorization scope(s):
 //   kGTLAuthScopePostUserinfoEmail
-// Fetches a GTLPostApiPostsUserPostCreateResponse.
-+ (id)queryForCreateWithObject:(GTLPostApiPostsUserPostCreateRequest *)object;
+// Fetches a GTLPostUserPostCreateResponse.
++ (id)queryForCreateWithObject:(GTLPostUserPostCreateRequest *)object;
 
 // Method: post.list
-//  Required:
-//   type:
-//      kGTLPostTypeHot: "HOT"
-//      kGTLPostTypeTrending: "TRENDING"
-//  Optional:
-//   cursor: NSString
-//   pageSize: long long
 //  Authorization scope(s):
 //   kGTLAuthScopePostUserinfoEmail
-// Fetches a GTLPostApiPostsUserPostListResponse.
-+ (id)queryForListWithType:(NSString *)type;
+// Fetches a GTLPostUserPostListResponse.
++ (id)queryForListWithObject:(GTLPostUserPostListRequest *)object;
 
 @end

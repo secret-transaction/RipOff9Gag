@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLPostConstants.h
+//  GTLPostUserPostCreateResponse.h
 //
 
 // ----------------------------------------------------------------------------
@@ -12,15 +12,20 @@
 //   post/v1
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
-
-#import <Foundation/Foundation.h>
+// Classes:
+//   GTLPostUserPostCreateResponse (0 custom class methods, 1 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
-  #import "GTL/GTLDefines.h"
+  #import "GTL/GTLObject.h"
 #else
-  #import "GTLDefines.h"
+  #import "GTLObject.h"
 #endif
 
-// Authorization scope
-// View your email address
-GTL_EXTERN NSString * const kGTLAuthScopePostUserinfoEmail;  // "https://www.googleapis.com/auth/userinfo.email"
+// ----------------------------------------------------------------------------
+//
+//   GTLPostUserPostCreateResponse
+//
+
+@interface GTLPostUserPostCreateResponse : GTLObject
+@property (copy) NSString *postId;
+@end

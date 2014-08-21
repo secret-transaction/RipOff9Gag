@@ -3,15 +3,15 @@
  */
 
 //
-//  GTLPostConstants.h
+//  GTLImageConstants.h
 //
 
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   post/v1
+//   image/v1
 // Description:
-//   Rogag API for Viewing and Posting Funny Pics
+//   Rogag API for Images
 
 #import <Foundation/Foundation.h>
 
@@ -23,4 +23,4 @@
 
 // Authorization scope
 // View your email address
-GTL_EXTERN NSString * const kGTLAuthScopePostUserinfoEmail;  // "https://www.googleapis.com/auth/userinfo.email"
+GTL_EXTERN NSString * const kGTLAuthScopeImageUserinfoEmail;  // "https://www.googleapis.com/auth/userinfo.email"

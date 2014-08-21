@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLUser.h
+//  GTLUserAppError.m
 //
 
 // ----------------------------------------------------------------------------
@@ -12,14 +12,16 @@
 //   user/v1
 // Description:
 //   Rogag API for User Management
-
-#import "GTLUserConstants.h"
+// Classes:
+//   GTLUserAppError (0 custom class methods, 2 custom properties)
 
 #import "GTLUserAppError.h"
-#import "GTLUserLoginRequest.h"
-#import "GTLUserLoginResponse.h"
-#import "GTLUserRegistrationRequest.h"
-#import "GTLUserRegistrationResponse.h"
 
-#import "GTLQueryUser.h"
-#import "GTLServiceUser.h"
+// ----------------------------------------------------------------------------
+//
+//   GTLUserAppError
+//
+
+@implementation GTLUserAppError
+@dynamic errorCode, errorMessage;
+@end
