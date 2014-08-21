@@ -1,6 +1,6 @@
 package com.secrettransaction.rogagserver.api.dto;
 
-public class UserRegistrationResponse {
+public class UserRegistrationResponse extends BaseReponse {
 
 	private String userId;
 

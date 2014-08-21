@@ -9,15 +9,19 @@ public class AppUser {
 
 	@Id
 	private Long id;
-
-	@Index
-	private String username;
+	
+	private String displayImageUrl;
 	
 	@Index
-	private String password; // encrypted, we don't store plain text passwords
+	private String displayName;
 
+	@Index
 	private String fullName;
+	
+	@Index
 	private String firstName;
+	
+	@Index
 	private String lastName;
 
 	public Long getId() {
@@ -28,20 +32,12 @@ public class AppUser {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getDisplayImageUrl() {
+		return displayImageUrl;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setDisplayImageUrl(String displayImageUrl) {
+		this.displayImageUrl = displayImageUrl;
 	}
 
 	public String getFullName() {
@@ -66,6 +62,14 @@ public class AppUser {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 }
