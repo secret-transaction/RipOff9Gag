@@ -12,4 +12,9 @@ public class BaseRequest {
 		this.auth = auth;
 	}
 
+	@Override
+	public String toString() {
+		return "BaseRequest [auth=" + auth + "]";
+	}
+
 }

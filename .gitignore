@@ -79,3 +79,4 @@ Android/build
 
 #private keys
 server/security
+server-java/src/main/webapp/WEB-INF/security

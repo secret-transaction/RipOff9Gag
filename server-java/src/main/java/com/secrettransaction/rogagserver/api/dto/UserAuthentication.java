@@ -21,4 +21,9 @@ public class UserAuthentication {
 		this.userToken = userToken;
 	}
 
+	@Override
+	public String toString() {
+		return "UserAuthentication [userId=" + userId + ", userToken=" + userToken + "]";
+	}
+
 }
