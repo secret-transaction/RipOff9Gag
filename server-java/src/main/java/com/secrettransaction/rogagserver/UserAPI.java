@@ -1,7 +1,7 @@
 package com.secrettransaction.rogagserver;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
-import static com.secrettransaction.rogagserver.util.ObjectifySupport.save;
+import static com.secrettransaction.rogagserver.util.ObjectifySupport.*;
 
 import java.util.Date;
 import java.util.logging.Logger;
@@ -52,6 +52,7 @@ public class UserAPI {
 		if (response.getAppErrors().isEmpty()) {
 			AppUser appUser = new AppUser();
 			appUser.setFullName(String.format("%s %s", request.getFirstName(), request.getLastName()));
+			appUser.setDisplayImageUrl("http://38.media.tumblr.com/avatar_a1f7bb7ebcce_128.png");
 			appUser.setDisplayName(appUser.getFullName());
 			appUser.setFirstName(request.getFirstName());
 			appUser.setLastName(request.getLastName());
@@ -78,7 +79,7 @@ public class UserAPI {
 		log.config("logging in:" + request);
 		UserLoginResponse response = new UserLoginResponse();
 		
-		Query<AppUserAccount> loginQuery = ofy().load().type(AppUserAccount.class).
+		Query<AppUserAccount> loginQuery = load(AppUserAccount.class).
 				filter("type", request.getLoginType()).
 				filter("username", request.getUsername());
 		
@@ -107,9 +108,13 @@ public class UserAPI {
 			login.setUserKey(account.getUserKey());
 			login.setUserAccountKey(account.key());
 			save(login);
+			
+			AppUser user = ofy().load().key(account.getUserKey()).now();
 
 			response.setUserId(account.getUserKey().getId()+"");
 			response.setUserToken(login.getAccessToken());
+			response.setUsername(user.getDisplayName());
+			response.setUserImageUrl(user.getDisplayImageUrl());
 		}
 		
 		return response;
