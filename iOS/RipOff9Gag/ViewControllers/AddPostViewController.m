@@ -7,6 +7,8 @@
 //
 
 #import "AddPostViewController.h"
+#import "GTLImage.h"
+#import "SessionManager.h"
 
 static NSInteger const PickerCamera = 0;
 static NSInteger const PickerGallery = 1;
@@ -44,6 +46,26 @@ static NSInteger const PickerGallery = 1;
 
 - (IBAction)upload:(id)sender
 {
+    NSLog(@"Retrieving Upload/Download Url...");
+    GTLServiceImage *imageService = [GTLServiceImage new];
+    
+    SessionManager *sm = [SessionManager sharedInstance];
+    
+    GTLImageUserAuthentication *auth = [GTLImageUserAuthentication new];
+    auth.userId = sm.userId;
+    auth.userToken = sm.userToken;
+    
+    GTLImageGetUrlRequest *request = [GTLImageGetUrlRequest new];
+    request.auth = auth;
+    request.fileName = @"image.png";
+    request.imageType = @"image/png";
+    
+    GTLQueryImage *query = [GTLQueryImage queryForGetUrlWithObject:request];
+    
+    [imageService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLImageGetUrlResponse *response, NSError *error) {
+        NSLog(@"Response: Upload:%@ Download:%@", response.uploadUrl, response.downloadUrl);
+    }];
+    
     NSLog(@"Upload Post");
 }
 
