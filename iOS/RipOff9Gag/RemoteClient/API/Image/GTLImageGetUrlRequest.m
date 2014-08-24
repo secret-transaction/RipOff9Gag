@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Images
 // Classes:
-//   GTLImageGetUrlRequest (0 custom class methods, 1 custom properties)
+//   GTLImageGetUrlRequest (0 custom class methods, 3 custom properties)
 
 #import "GTLImageGetUrlRequest.h"
 
@@ -25,5 +25,5 @@
 //
 
 @implementation GTLImageGetUrlRequest
-@dynamic auth;
+@dynamic auth, fileName, imageType;
 @end

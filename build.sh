@@ -6,7 +6,7 @@ service_generator="/Users/lbibera/Library/Developer/Xcode/DerivedData/ServiceGen
 #output_dir="iOS/RipOff9Gag/RemoteClient"
 output_dir="endpoints"
 
-endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "$domain" --output endpoints api.ReactionAPI api.PostsAPI api.UserAPI
+#endpointscfg.py get_discovery_doc --format rpc --application server/ripoff9gag --hostname "$domain" --output endpoints api.ReactionAPI api.PostsAPI api.UserAPI
 
 echo "Generating iOS Library..."
 

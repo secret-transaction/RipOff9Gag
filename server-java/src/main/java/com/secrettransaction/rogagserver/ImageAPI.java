@@ -26,7 +26,7 @@ public class ImageAPI {
 		String userId = request.getAuth() != null ? request.getAuth().getUserId() : "unknown";
 		long expiration = System.currentTimeMillis() + 5 * 60 * 1000;
 		
-		String fileName = String.format("/uploads/%s/%s_%s", userId, expiration, request.getFileName());
+		String fileName = String.format("uploads/%s/%s_%s", userId, expiration, request.getFileName());
 		
 		//TODO: do timey wimey stuffs for a signed url here
 		GCSSupportUtil.SignedUrlParams params = new GCSSupportUtil.SignedUrlParams();
