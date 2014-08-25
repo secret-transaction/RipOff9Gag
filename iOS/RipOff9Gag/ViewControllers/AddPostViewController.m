@@ -74,14 +74,16 @@ static NSInteger const PickerGallery = 1;
         
         NSError *error2;
         NSURL *url = [[NSURL alloc] initWithString:response.uploadUrl];
-        NSMutableURLRequest *request = [requestManager.requestSerializer multipartFormRequestWithMethod:@"PUT" URLString:[url absoluteString] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileData:imageData name:@"myFile" fileName:fileName mimeType:mimeType];
+        NSMutableURLRequest *uploadRequest = [requestManager.requestSerializer multipartFormRequestWithMethod:@"PUT" URLString:[url absoluteString] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            //[formData appendPartWithFileData:imageData name:@"myFile" fileName:fileName mimeType:mimeType];
         } error:&error2];
-        [request setValue:mimeType forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"public-read" forHTTPHeaderField:@"x-goog-acl"];
         
-        AFHTTPRequestOperation *operation = [requestManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *resp) {
-            NSLog(@"Upload Success: %@", resp);
+        [uploadRequest setHTTPBody:imageData];
+        [uploadRequest setValue:mimeType forHTTPHeaderField:@"Content-Type"];
+        [uploadRequest setValue:@"public-read" forHTTPHeaderField:@"x-goog-acl"];
+        
+        AFHTTPRequestOperation *operation = [requestManager HTTPRequestOperationWithRequest:uploadRequest success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *resp) {
+            NSLog(@"Upload Success: %@", operation);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Upload Failed");
         }];
