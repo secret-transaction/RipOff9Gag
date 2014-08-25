@@ -9,6 +9,7 @@
 #import "AddPostViewController.h"
 #import "GTLImage.h"
 #import "SessionManager.h"
+#import <AFNetworking/AFNetworking.h>
 
 static NSInteger const PickerCamera = 0;
 static NSInteger const PickerGallery = 1;
@@ -49,6 +50,10 @@ static NSInteger const PickerGallery = 1;
     NSLog(@"Retrieving Upload/Download Url...");
     GTLServiceImage *imageService = [GTLServiceImage new];
     
+    NSData *imageData = UIImagePNGRepresentation(self.image.image);
+    NSString *fileName = @"myFile.png";
+    NSString *mimeType = @"image/png";
+    
     SessionManager *sm = [SessionManager sharedInstance];
     
     GTLImageUserAuthentication *auth = [GTLImageUserAuthentication new];
@@ -57,13 +62,31 @@ static NSInteger const PickerGallery = 1;
     
     GTLImageGetUrlRequest *request = [GTLImageGetUrlRequest new];
     request.auth = auth;
-    request.fileName = @"image.png";
-    request.imageType = @"image/png";
+    request.fileName = fileName;
+    request.imageType = mimeType;
     
     GTLQueryImage *query = [GTLQueryImage queryForGetUrlWithObject:request];
     
     [imageService executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLImageGetUrlResponse *response, NSError *error) {
-        NSLog(@"Response: Upload:%@ Download:%@", response.uploadUrl, response.downloadUrl);
+        NSLog(@"Get URL Response: Upload:%@ Download:%@", response.uploadUrl, response.downloadUrl);
+        
+        AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager new];
+        
+        NSError *error2;
+        NSURL *url = [[NSURL alloc] initWithString:response.uploadUrl];
+        NSMutableURLRequest *request = [requestManager.requestSerializer multipartFormRequestWithMethod:@"PUT" URLString:[url absoluteString] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:imageData name:@"myFile" fileName:fileName mimeType:mimeType];
+        } error:&error2];
+        [request setValue:mimeType forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"public-read" forHTTPHeaderField:@"x-goog-acl"];
+        
+        AFHTTPRequestOperation *operation = [requestManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *resp) {
+            NSLog(@"Upload Success: %@", resp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Upload Failed");
+        }];
+        
+        [requestManager.operationQueue addOperation:operation];
     }];
     
     NSLog(@"Upload Post");
