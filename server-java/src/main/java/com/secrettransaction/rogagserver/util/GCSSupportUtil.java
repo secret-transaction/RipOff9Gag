@@ -19,9 +19,9 @@ public class GCSSupportUtil {
 	private String p12FileSrc = "WEB-INF/security/rogag-server-stage.p12";
 	private String p12FilePassword = "notasecret";
 	private String googleAccessId = "346065651051-5jqnomg7d53onsquss29pncq5si5p419@developer.gserviceaccount.com";
-	private String bucketName = "rogag-server-stage.appspot.com";
+	private String bucketName = "rogag-images.secrettransaction.com";
 	private String gcsBaseUrl = "http://storage.googleapis.com";
-	private String servingUrlPrefix = "http://rogag-server-stage.appspot.com";
+	private String servingUrlPrefix = "http://rogag-images.secrettransaction.com";
 	
 	/**
 	 * for an explanation on how this method works, refer to: https://developers.google.com/storage/docs/accesscontrol#Signed-URLs
