@@ -39,4 +39,9 @@ public class UserPostCreateRequest {
 		this.isUnsafe = isUnsafe;
 	}
 
+	@Override
+	public String toString() {
+		return "UserPostCreateRequest [auth=" + auth + ", title=" + title + ", imageUrl=" + imageUrl + ", isUnsafe=" + isUnsafe + "]";
+	}
+
 }

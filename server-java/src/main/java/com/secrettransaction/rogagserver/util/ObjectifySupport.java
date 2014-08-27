@@ -10,6 +10,7 @@ import com.googlecode.objectify.cmd.LoadType;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.AppUserAccount;
 import com.secrettransaction.rogagserver.entity.AppUserLogin;
+import com.secrettransaction.rogagserver.entity.FunnyPost;
 
 public class ObjectifySupport {
 	
@@ -22,6 +23,7 @@ public class ObjectifySupport {
 		ObjectifyService.register(AppUser.class);
 		ObjectifyService.register(AppUserAccount.class);
 		ObjectifyService.register(AppUserLogin.class);
+		ObjectifyService.register(FunnyPost.class);
 	}
 	
 	public static<T> Key<T> save(T entity) {

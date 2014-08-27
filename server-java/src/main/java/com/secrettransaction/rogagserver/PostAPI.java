@@ -1,5 +1,6 @@
 package com.secrettransaction.rogagserver;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -8,12 +9,16 @@ import java.util.logging.Logger;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
+import com.googlecode.objectify.Key;
 import com.secrettransaction.rogagserver.api.dto.UserAccount;
 import com.secrettransaction.rogagserver.api.dto.UserPost;
 import com.secrettransaction.rogagserver.api.dto.UserPostCreateRequest;
 import com.secrettransaction.rogagserver.api.dto.UserPostCreateResponse;
 import com.secrettransaction.rogagserver.api.dto.UserPostListRequest;
 import com.secrettransaction.rogagserver.api.dto.UserPostListResponse;
+import com.secrettransaction.rogagserver.entity.AppUser;
+import com.secrettransaction.rogagserver.entity.FunnyPost;
+import com.secrettransaction.rogagserver.util.ObjectifySupport;
 
 @Api(name="post", version="v1", description="Rogag API for Viewing and Posting Funny Pics")
 public class PostAPI {
@@ -52,6 +57,22 @@ public class PostAPI {
 	
 	@ApiMethod(name="create", path="create", httpMethod=HttpMethod.POST)
 	public UserPostCreateResponse createPost(UserPostCreateRequest request) {
+		log.info("create post:" + request);
+		
+		//TODO: validate crap
+		//TODO: fix, this is lame
+		Key<AppUser> key = Key.create(AppUser.class, Long.parseLong(request.getAuth().getUserId()));
+		
+		FunnyPost post = new FunnyPost();
+		post.setDateCreated(new Date());
+		post.setOwner(key);
+		post.setTitle(request.getTitle());
+		post.setImageUrl(request.getImageUrl());
+		post.setUnsafe(request.getIsUnsafe());
+		
+		ObjectifySupport.save(post);
+		
+		//TODO: create various indexes
 		
 		UserPostCreateResponse response = new UserPostCreateResponse();
 		response.setPostId("1111");
