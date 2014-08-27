@@ -9,6 +9,7 @@
 #import "AddPostViewController.h"
 #import "GTLImage.h"
 #import "SessionManager.h"
+#import "GTLPost.h"
 #import <AFNetworking/AFNetworking.h>
 
 static NSInteger const PickerCamera = 0;
@@ -47,6 +48,7 @@ static NSInteger const PickerGallery = 1;
 
 - (IBAction)upload:(id)sender
 {
+    self.uploadButton.enabled = NO;
     NSLog(@"Retrieving Upload/Download Url...");
     GTLServiceImage *imageService = [GTLServiceImage new];
     
@@ -84,6 +86,27 @@ static NSInteger const PickerGallery = 1;
         
         AFHTTPRequestOperation *operation = [requestManager HTTPRequestOperationWithRequest:uploadRequest success:^(AFHTTPRequestOperation *operation, NSHTTPURLResponse *resp) {
             NSLog(@"Upload Success: %@", operation);
+            
+            
+            GTLServicePost *postService = [GTLServicePost new];
+            
+            GTLPostUserAuthentication *postAuth = [GTLPostUserAuthentication new];
+            postAuth.userId = sm.userId;
+            postAuth.userToken = sm.userToken;
+            
+            GTLPostUserPostCreateRequest *postCreateRequest = [GTLPostUserPostCreateRequest new];
+            postCreateRequest.auth = postAuth;
+            postCreateRequest.imageUrl = response.downloadUrl;
+            postCreateRequest.title = self.description.text;
+            postCreateRequest.isUnsafe = self.isUnsafe.enabled ? @1 : @0;
+            
+            GTLQueryPost *postCreateQuery = [GTLQueryPost queryForCreateWithObject:postCreateRequest];
+            
+            [postService executeQuery:postCreateQuery completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
+                //respond on success
+                self.uploadButton.enabled = YES;
+            }];
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Upload Failed");
         }];
