@@ -22,6 +22,7 @@ static NSInteger const PickerGallery = 1;
 @property (weak, nonatomic) IBOutlet UILabel *characterCountDisplay;
 @property (weak, nonatomic) IBOutlet UISwitch *isUnsafe;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *uploadButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -50,6 +51,7 @@ static NSInteger const PickerGallery = 1;
 {
     self.uploadButton.enabled = NO;
     NSLog(@"Retrieving Upload/Download Url...");
+    [self.activityIndicator startAnimating];
     GTLServiceImage *imageService = [GTLServiceImage new];
     
     NSData *imageData = UIImagePNGRepresentation(self.image.image);
@@ -105,6 +107,7 @@ static NSInteger const PickerGallery = 1;
             [postService executeQuery:postCreateQuery completionHandler:^(GTLServiceTicket *ticket, id object, NSError *error) {
                 //respond on success
                 self.uploadButton.enabled = YES;
+                [self.activityIndicator stopAnimating];
             }];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

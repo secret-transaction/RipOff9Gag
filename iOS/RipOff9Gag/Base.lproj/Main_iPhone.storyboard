@@ -240,6 +240,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Toy-O8-Vvb">
+                                <rect key="frame" x="141" y="241" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -252,6 +256,7 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Toy-O8-Vvb" id="FlI-CE-Zbo"/>
                         <outlet property="characterCountDisplay" destination="7Nu-Wf-gA6" id="z83-d7-jJc"/>
                         <outlet property="description" destination="9hl-Y1-Ab4" id="Kf4-1D-OJH"/>
                         <outlet property="image" destination="DMM-to-jcT" id="WFk-ga-xMR"/>
