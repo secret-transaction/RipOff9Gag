@@ -26,6 +26,18 @@ public class FunnyPost {
 
 	@Index
 	private Key<AppUser> owner;
+	
+	@Index
+	private Integer points = 0;
+	
+	@Index
+	private Integer commentCount = 0;
+	
+	@Index
+	private Integer upvoteCount = 0;
+	
+	@Index
+	private Integer downvoteCount = 0;
 
 	public Long getId() {
 		return id;
@@ -73,6 +85,38 @@ public class FunnyPost {
 
 	public void setOwner(Key<AppUser> owner) {
 		this.owner = owner;
+	}
+
+	public Integer getPoints() {
+		return points;
+	}
+
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
+
+	public Integer getCommentCount() {
+		return commentCount;
+	}
+
+	public void setCommentCount(Integer commentCount) {
+		this.commentCount = commentCount;
+	}
+
+	public Integer getUpvoteCount() {
+		return upvoteCount;
+	}
+
+	public void setUpvoteCount(Integer upvoteCount) {
+		this.upvoteCount = upvoteCount;
+	}
+
+	public Integer getDownvoteCount() {
+		return downvoteCount;
+	}
+
+	public void setDownvoteCount(Integer downvoteCount) {
+		this.downvoteCount = downvoteCount;
 	}
 
 }
