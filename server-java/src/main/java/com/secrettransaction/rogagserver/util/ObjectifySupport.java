@@ -9,7 +9,7 @@ import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.cmd.LoadType;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.AppUserAccount;
-import com.secrettransaction.rogagserver.entity.AppUserLogin;
+import com.secrettransaction.rogagserver.entity.AppUserLoginSession;
 import com.secrettransaction.rogagserver.entity.FunnyPost;
 import com.secrettransaction.rogagserver.entity.HotIndex;
 import com.secrettransaction.rogagserver.entity.PostComment;
@@ -26,7 +26,7 @@ public class ObjectifySupport {
 		log.config("Registering Entities:");
 		ObjectifyService.register(AppUser.class);
 		ObjectifyService.register(AppUserAccount.class);
-		ObjectifyService.register(AppUserLogin.class);
+		ObjectifyService.register(AppUserLoginSession.class);
 		ObjectifyService.register(FunnyPost.class);
 		ObjectifyService.register(HotIndex.class);
 		ObjectifyService.register(PostComment.class);
