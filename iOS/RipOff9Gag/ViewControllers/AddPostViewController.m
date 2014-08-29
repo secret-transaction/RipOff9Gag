@@ -31,6 +31,7 @@ static NSInteger const PickerGallery = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.description.delegate = self;
 }
 
@@ -122,7 +123,6 @@ static NSInteger const PickerGallery = 1;
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    NSLog(@"textViewDidChange:");
     [self validate];
 }
 
@@ -131,9 +131,13 @@ static NSInteger const PickerGallery = 1;
     //TODO: perform validation for image
     BOOL validPicture = YES;
 
-    BOOL validDescription = self.description.text.length > 0;
+    NSUInteger charCount = self.description.text.length;
+    BOOL validDescription = charCount > 0 && charCount <= 60;
+    
     
     self.uploadButton.enabled = validDescription && validPicture;
+    self.characterCountDisplay.textColor = validDescription ? [UIColor grayColor] : [UIColor redColor];
+    self.characterCountDisplay.text = [NSString stringWithFormat:@"%lu/60", (unsigned long)charCount];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -161,7 +165,7 @@ static NSInteger const PickerGallery = 1;
     picker.allowsEditing = YES;
     picker.delegate = self;
     [self presentViewController:picker animated:YES completion:nil];
-    
+    [self validate];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

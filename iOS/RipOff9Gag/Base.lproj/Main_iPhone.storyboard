@@ -195,7 +195,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/60" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nu-Wf-gA6">
-                                        <rect key="frame" x="225" y="93" width="49" height="21"/>
+                                        <rect key="frame" x="118" y="93" width="156" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,7 +248,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VK9-dn-IbW">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="waQ-Cv-ic9">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Upload" id="waQ-Cv-ic9">
                             <connections>
                                 <action selector="upload:" destination="SWs-SM-hwU" id="1TD-cT-bQe"/>
                             </connections>
