@@ -1,5 +1,5 @@
 package com.secrettransaction.rogagserver.api.dto;
 
-public class CommentCreateResponse {
+public class CommentCreateResponse extends BaseReponse {
 
 }

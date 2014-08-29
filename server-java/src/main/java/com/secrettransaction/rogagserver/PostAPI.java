@@ -3,7 +3,7 @@ package com.secrettransaction.rogagserver;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import com.google.api.server.spi.config.Api;
@@ -18,34 +18,45 @@ import com.secrettransaction.rogagserver.api.dto.UserPostListRequest;
 import com.secrettransaction.rogagserver.api.dto.UserPostListResponse;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.FunnyPost;
+import com.secrettransaction.rogagserver.service.AppUserQueryService;
+import com.secrettransaction.rogagserver.service.FunnyPostQueryService;
+import com.secrettransaction.rogagserver.util.CursorList;
 import com.secrettransaction.rogagserver.util.ObjectifySupport;
 
 @Api(name="post", version="v1", description="Rogag API for Viewing and Posting Funny Pics")
 public class PostAPI {
 
 	private static final Logger log = Logger.getLogger(PostAPI.class.getSimpleName());
+	private static final FunnyPostQueryService queryService = FunnyPostQueryService.getInstance();
+	private static final AppUserQueryService userQueryService = AppUserQueryService.getInstance();
 	
 	@ApiMethod(name="list", path="list", httpMethod=HttpMethod.GET)
 	public UserPostListResponse listPosts(UserPostListRequest request) {
 		log.info("listing:" + request);
 		
-		UserAccount userAccount = new UserAccount();
-		userAccount.setUserId("1");
-		userAccount.setUsername("test1");
+		CursorList<FunnyPost> postCList = queryService.getNewPosts(new Date(request.getDate()), null, 10);
 		
-		Long time = System.currentTimeMillis();
+		//gather users:
+		List<Key<AppUser>> userKeyList = new LinkedList<>();
+		for (FunnyPost p : postCList.getResults()) {
+			userKeyList.add(p.getOwner());
+		}
+		
+		Map<Long, AppUser> userMap = userQueryService.bulkFetch(userKeyList);
 		List<UserPost> postList = new LinkedList<>();
-		
-		Random rand = new Random();
-		
-		for (int i=0; i<request.getPageSize(); i++) {
+
+		for (FunnyPost p : postCList.getResults()) {
 			UserPost post = new UserPost();
-			post.setPostId("" + time + i);
-			post.setImageUrl(String.format("https://rogag-server-stage.appspot.com/static/images/image%s.jpg", rand.nextInt(9)));
-			post.setCommentCount(rand.nextInt(999));
-			post.setIsUnsafe(rand.nextBoolean());
-			post.setTitle(String.format("Some title %s", rand.nextInt(999)));
+			post.setCommentCount(p.getCommentCount());
+			post.setImageUrl(p.getImageUrl());
+			post.setTitle(p.getTitle());
 			
+			AppUser u = userMap.get(p.getOwner().getId());
+			UserAccount user = new UserAccount();
+			user.setUserId(u.getId().toString());
+			user.setUsername(u.getDisplayName());
+			
+			post.setOwner(user);
 			postList.add(post);
 		}
 		

@@ -5,6 +5,9 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 
+/**
+ * notifications about a post will be sent to subscribers
+ */
 @Entity
 public class PostSubscriber {
 

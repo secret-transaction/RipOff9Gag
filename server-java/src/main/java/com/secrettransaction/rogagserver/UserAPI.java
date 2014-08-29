@@ -18,7 +18,7 @@ import com.secrettransaction.rogagserver.api.dto.UserRegistrationRequest;
 import com.secrettransaction.rogagserver.api.dto.UserRegistrationResponse;
 import com.secrettransaction.rogagserver.entity.AppUser;
 import com.secrettransaction.rogagserver.entity.AppUserAccount;
-import com.secrettransaction.rogagserver.entity.AppUserLogin;
+import com.secrettransaction.rogagserver.entity.AppUserLoginSession;
 import com.secrettransaction.rogagserver.util.AccessTokenGenerator;
 import com.secrettransaction.rogagserver.util.PasswordEncryption;
 import com.secrettransaction.rogagserver.util.SimpleValidatorUtil;
@@ -95,7 +95,7 @@ public class UserAPI {
 		
 		if (response.getAppErrors().isEmpty()) {
 			
-			AppUserLogin login = new AppUserLogin();
+			AppUserLoginSession login = new AppUserLoginSession();
 			login.setClientId(request.getClientId());
 			login.setClientDevice(request.getClientDevice());
 			login.setClientOS(request.getClientOS());

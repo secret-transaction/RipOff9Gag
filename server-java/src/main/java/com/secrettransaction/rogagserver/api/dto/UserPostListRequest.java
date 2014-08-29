@@ -5,6 +5,7 @@ public class UserPostListRequest {
 	private String cursor;
 	private String type;
 	private Integer pageSize;
+	private Long date;
 
 	public String getCursor() {
 		return cursor;
@@ -30,9 +31,12 @@ public class UserPostListRequest {
 		this.pageSize = pageSize;
 	}
 
-	@Override
-	public String toString() {
-		return "UserPostListRequest [cursor=" + cursor + ", type=" + type + ", pageSize=" + pageSize + "]";
+	public Long getDate() {
+		return date;
+	}
+
+	public void setDate(Long date) {
+		this.date = date;
 	}
 
 }
