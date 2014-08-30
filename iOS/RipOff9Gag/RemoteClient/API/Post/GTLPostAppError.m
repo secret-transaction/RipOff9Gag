@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLPost.h
+//  GTLPostAppError.m
 //
 
 // ----------------------------------------------------------------------------
@@ -12,16 +12,16 @@
 //   post/v1
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
-
-#import "GTLPostConstants.h"
+// Classes:
+//   GTLPostAppError (0 custom class methods, 2 custom properties)
 
 #import "GTLPostAppError.h"
-#import "GTLPostUserAccount.h"
-#import "GTLPostUserAuthentication.h"
-#import "GTLPostUserPost.h"
-#import "GTLPostUserPostCreateRequest.h"
-#import "GTLPostUserPostCreateResponse.h"
-#import "GTLPostUserPostListResponse.h"
 
-#import "GTLQueryPost.h"
-#import "GTLServicePost.h"
+// ----------------------------------------------------------------------------
+//
+//   GTLPostAppError
+//
+
+@implementation GTLPostAppError
+@dynamic errorCode, errorMessage;
+@end

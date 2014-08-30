@@ -15,6 +15,7 @@
 @interface PostsTableViewController ()
 
 @property BOOL needsRefresh;
+@property NSNumber *servertime;
 
 @end
 
@@ -52,11 +53,12 @@
     GTLQueryPost *query = [GTLQueryPost queryForListWithType:@"trending"];
     query.cursor = @"";
     query.pageSize = 10;
-    query.sinceDate = 1;
+    query.sinceDate = self.servertime ? [self.servertime longLongValue] : 1;
     
     [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLPostUserPostListResponse *response, NSError *error) {
         if (!error) {
             NSLog(@"Listing Posts Success");
+            self.servertime = response.serverTime;
             
             for (GTLPostUserPost *post in response.posts) {
                 NSLog(@"Got Post:%@", post.postId);

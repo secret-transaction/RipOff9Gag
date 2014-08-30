@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLReactionCommentCreateResponse (0 custom class methods, 1 custom properties)
+//   GTLReactionCommentCreateResponse (0 custom class methods, 2 custom properties)
 
 #import "GTLReactionCommentCreateResponse.h"
 
@@ -25,7 +25,7 @@
 //
 
 @implementation GTLReactionCommentCreateResponse
-@dynamic appErrors;
+@dynamic appErrors, serverTime;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =

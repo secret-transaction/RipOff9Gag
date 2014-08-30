@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for User Management
 // Classes:
-//   GTLUserRegistrationResponse (0 custom class methods, 2 custom properties)
+//   GTLUserRegistrationResponse (0 custom class methods, 3 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -30,5 +30,6 @@
 
 @interface GTLUserRegistrationResponse : GTLObject
 @property (retain) NSArray *appErrors;  // of GTLUserAppError
+@property (retain) NSNumber *serverTime;  // longLongValue
 @property (copy) NSString *userId;
 @end

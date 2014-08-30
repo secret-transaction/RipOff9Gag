@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLPostUserPostListResponse.h
+//  GTLPostAppError.h
 //
 
 // ----------------------------------------------------------------------------
@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLPostUserPostListResponse (0 custom class methods, 4 custom properties)
+//   GTLPostAppError (0 custom class methods, 2 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -21,17 +21,12 @@
   #import "GTLObject.h"
 #endif
 
-@class GTLPostAppError;
-@class GTLPostUserPost;
-
 // ----------------------------------------------------------------------------
 //
-//   GTLPostUserPostListResponse
+//   GTLPostAppError
 //
 
-@interface GTLPostUserPostListResponse : GTLObject
-@property (retain) NSArray *appErrors;  // of GTLPostAppError
-@property (copy) NSString *cursor;
-@property (retain) NSArray *posts;  // of GTLPostUserPost
-@property (retain) NSNumber *serverTime;  // longLongValue
+@interface GTLPostAppError : GTLObject
+@property (copy) NSString *errorCode;
+@property (copy) NSString *errorMessage;
 @end

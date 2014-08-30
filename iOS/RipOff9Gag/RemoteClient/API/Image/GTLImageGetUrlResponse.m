@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Images
 // Classes:
-//   GTLImageGetUrlResponse (0 custom class methods, 3 custom properties)
+//   GTLImageGetUrlResponse (0 custom class methods, 4 custom properties)
 
 #import "GTLImageGetUrlResponse.h"
 
@@ -25,7 +25,7 @@
 //
 
 @implementation GTLImageGetUrlResponse
-@dynamic appErrors, downloadUrl, uploadUrl;
+@dynamic appErrors, downloadUrl, serverTime, uploadUrl;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =

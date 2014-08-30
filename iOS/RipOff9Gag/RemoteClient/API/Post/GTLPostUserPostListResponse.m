@@ -13,10 +13,11 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLPostUserPostListResponse (0 custom class methods, 2 custom properties)
+//   GTLPostUserPostListResponse (0 custom class methods, 4 custom properties)
 
 #import "GTLPostUserPostListResponse.h"
 
+#import "GTLPostAppError.h"
 #import "GTLPostUserPost.h"
 
 // ----------------------------------------------------------------------------
@@ -25,12 +26,14 @@
 //
 
 @implementation GTLPostUserPostListResponse
-@dynamic cursor, posts;
+@dynamic appErrors, cursor, posts, serverTime;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =
-    [NSDictionary dictionaryWithObject:[GTLPostUserPost class]
-                                forKey:@"posts"];
+    [NSDictionary dictionaryWithObjectsAndKeys:
+      [GTLPostAppError class], @"appErrors",
+      [GTLPostUserPost class], @"posts",
+      nil];
   return map;
 }
 

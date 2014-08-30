@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for User Management
 // Classes:
-//   GTLUserLoginResponse (0 custom class methods, 5 custom properties)
+//   GTLUserLoginResponse (0 custom class methods, 6 custom properties)
 
 #import "GTLUserLoginResponse.h"
 
@@ -25,7 +25,7 @@
 //
 
 @implementation GTLUserLoginResponse
-@dynamic appErrors, userId, userImageUrl, username, userToken;
+@dynamic appErrors, serverTime, userId, userImageUrl, username, userToken;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =

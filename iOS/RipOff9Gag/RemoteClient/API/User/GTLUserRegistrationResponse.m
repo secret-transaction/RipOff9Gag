@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for User Management
 // Classes:
-//   GTLUserRegistrationResponse (0 custom class methods, 2 custom properties)
+//   GTLUserRegistrationResponse (0 custom class methods, 3 custom properties)
 
 #import "GTLUserRegistrationResponse.h"
 
@@ -25,7 +25,7 @@
 //
 
 @implementation GTLUserRegistrationResponse
-@dynamic appErrors, userId;
+@dynamic appErrors, serverTime, userId;
 
 + (NSDictionary *)arrayPropertyToClassMap {
   NSDictionary *map =

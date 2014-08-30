@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Images
 // Classes:
-//   GTLImageGetUrlResponse (0 custom class methods, 3 custom properties)
+//   GTLImageGetUrlResponse (0 custom class methods, 4 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -31,5 +31,6 @@
 @interface GTLImageGetUrlResponse : GTLObject
 @property (retain) NSArray *appErrors;  // of GTLImageAppError
 @property (copy) NSString *downloadUrl;
+@property (retain) NSNumber *serverTime;  // longLongValue
 @property (copy) NSString *uploadUrl;
 @end

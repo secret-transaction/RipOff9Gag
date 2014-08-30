@@ -25,6 +25,7 @@
 + (NSArray *)checkClasses {
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryPost class],
+                      [GTLPostAppError class],
                       [GTLPostUserAccount class],
                       [GTLPostUserAuthentication class],
                       [GTLPostUserPost class],
