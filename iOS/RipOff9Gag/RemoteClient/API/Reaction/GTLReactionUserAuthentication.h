@@ -3,17 +3,17 @@
  */
 
 //
-//  GTLPostUserPostListRequest.h
+//  GTLReactionUserAuthentication.h
 //
 
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   post/v1
+//   reaction/v1
 // Description:
-//   Rogag API for Viewing and Posting Funny Pics
+//   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLPostUserPostListRequest (0 custom class methods, 3 custom properties)
+//   GTLReactionUserAuthentication (0 custom class methods, 2 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -23,11 +23,10 @@
 
 // ----------------------------------------------------------------------------
 //
-//   GTLPostUserPostListRequest
+//   GTLReactionUserAuthentication
 //
 
-@interface GTLPostUserPostListRequest : GTLObject
-@property (copy) NSString *cursor;
-@property (retain) NSNumber *pageSize;  // intValue
-@property (copy) NSString *type;
+@interface GTLReactionUserAuthentication : GTLObject
+@property (copy) NSString *userId;
+@property (copy) NSString *userToken;
 @end

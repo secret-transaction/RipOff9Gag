@@ -3,7 +3,7 @@
  */
 
 //
-//  GTLReactionCommentCreateRequest.h
+//  GTLReactionAppError.h
 //
 
 // ----------------------------------------------------------------------------
@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLReactionCommentCreateRequest (0 custom class methods, 4 custom properties)
+//   GTLReactionAppError (0 custom class methods, 2 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -21,16 +21,12 @@
   #import "GTLObject.h"
 #endif
 
-@class GTLReactionUserAuthentication;
-
 // ----------------------------------------------------------------------------
 //
-//   GTLReactionCommentCreateRequest
+//   GTLReactionAppError
 //
 
-@interface GTLReactionCommentCreateRequest : GTLObject
-@property (retain) GTLReactionUserAuthentication *auth;
-@property (retain) NSNumber *isComment;  // boolValue
-@property (copy) NSString *message;
-@property (retain) NSNumber *postId;  // longLongValue
+@interface GTLReactionAppError : GTLObject
+@property (copy) NSString *errorCode;
+@property (copy) NSString *errorMessage;
 @end

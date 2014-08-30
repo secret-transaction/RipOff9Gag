@@ -3,28 +3,25 @@
  */
 
 //
-//  GTLPostUserPost.m
+//  GTLReactionAppError.m
 //
 
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   post/v1
+//   reaction/v1
 // Description:
-//   Rogag API for Viewing and Posting Funny Pics
+//   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLPostUserPost (0 custom class methods, 11 custom properties)
+//   GTLReactionAppError (0 custom class methods, 2 custom properties)
 
-#import "GTLPostUserPost.h"
-
-#import "GTLPostUserAccount.h"
+#import "GTLReactionAppError.h"
 
 // ----------------------------------------------------------------------------
 //
-//   GTLPostUserPost
+//   GTLReactionAppError
 //
 
-@implementation GTLPostUserPost
-@dynamic commentCount, dateCreated, downVoted, imageUrl, isUnsafe, owner,
-         points, postId, title, unsafeImageUrl, upVoted;
+@implementation GTLReactionAppError
+@dynamic errorCode, errorMessage;
 @end

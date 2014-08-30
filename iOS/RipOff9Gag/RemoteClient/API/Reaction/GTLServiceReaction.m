@@ -25,11 +25,13 @@
 + (NSArray *)checkClasses {
   NSArray *classes = [NSArray arrayWithObjects:
                       [GTLQueryReaction class],
+                      [GTLReactionAppError class],
                       [GTLReactionCommentCreateRequest class],
                       [GTLReactionCommentCreateResponse class],
                       [GTLReactionCommentListRequest class],
                       [GTLReactionCommentListResponse class],
                       [GTLReactionComments class],
+                      [GTLReactionUserAuthentication class],
                       [GTLReactionVoteRequest class],
                       [GTLReactionVoteResponse class],
                       nil];

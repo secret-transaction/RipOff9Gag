@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLReactionVoteResponse (0 custom class methods, 0 custom properties)
+//   GTLReactionVoteResponse (0 custom class methods, 6 custom properties)
 
 #import "GTLReactionVoteResponse.h"
 
@@ -23,4 +23,6 @@
 //
 
 @implementation GTLReactionVoteResponse
+@dynamic commentCount, downvoteCount, isComment, pointsCount, postId,
+         upvoteCount;
 @end

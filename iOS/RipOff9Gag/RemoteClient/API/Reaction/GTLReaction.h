@@ -15,11 +15,13 @@
 
 #import "GTLReactionConstants.h"
 
+#import "GTLReactionAppError.h"
 #import "GTLReactionCommentCreateRequest.h"
 #import "GTLReactionCommentCreateResponse.h"
 #import "GTLReactionCommentListRequest.h"
 #import "GTLReactionCommentListResponse.h"
 #import "GTLReactionComments.h"
+#import "GTLReactionUserAuthentication.h"
 #import "GTLReactionVoteRequest.h"
 #import "GTLReactionVoteResponse.h"
 

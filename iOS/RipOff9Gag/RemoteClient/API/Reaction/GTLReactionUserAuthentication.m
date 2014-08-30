@@ -3,25 +3,25 @@
  */
 
 //
-//  GTLPostUserPostListRequest.m
+//  GTLReactionUserAuthentication.m
 //
 
 // ----------------------------------------------------------------------------
 // NOTE: This file is generated from Google APIs Discovery Service.
 // Service:
-//   post/v1
+//   reaction/v1
 // Description:
-//   Rogag API for Viewing and Posting Funny Pics
+//   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLPostUserPostListRequest (0 custom class methods, 3 custom properties)
+//   GTLReactionUserAuthentication (0 custom class methods, 2 custom properties)
 
-#import "GTLPostUserPostListRequest.h"
+#import "GTLReactionUserAuthentication.h"
 
 // ----------------------------------------------------------------------------
 //
-//   GTLPostUserPostListRequest
+//   GTLReactionUserAuthentication
 //
 
-@implementation GTLPostUserPostListRequest
-@dynamic cursor, pageSize, type;
+@implementation GTLReactionUserAuthentication
+@dynamic userId, userToken;
 @end

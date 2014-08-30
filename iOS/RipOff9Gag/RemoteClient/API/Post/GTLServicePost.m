@@ -30,7 +30,6 @@
                       [GTLPostUserPost class],
                       [GTLPostUserPostCreateRequest class],
                       [GTLPostUserPostCreateResponse class],
-                      [GTLPostUserPostListRequest class],
                       [GTLPostUserPostListResponse class],
                       nil];
   return classes;

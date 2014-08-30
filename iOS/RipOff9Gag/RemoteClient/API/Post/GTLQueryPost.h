@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLQueryPost (2 custom class methods, 1 custom properties)
+//   GTLQueryPost (2 custom class methods, 5 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLQuery.h"
@@ -22,7 +22,6 @@
 #endif
 
 @class GTLPostUserPostCreateRequest;
-@class GTLPostUserPostListRequest;
 
 @interface GTLQueryPost : GTLQuery
 
@@ -32,6 +31,14 @@
 
 // Selector specifying which fields to include in a partial response.
 @property (copy) NSString *fields;
+
+//
+// Method-specific parameters; see the comments below for more information.
+//
+@property (copy) NSString *cursor;
+@property (assign) NSInteger pageSize;
+@property (assign) long long sinceDate;
+@property (copy) NSString *type;
 
 #pragma mark -
 #pragma mark Service level methods
@@ -44,9 +51,13 @@
 + (id)queryForCreateWithObject:(GTLPostUserPostCreateRequest *)object;
 
 // Method: post.list
+//  Optional:
+//   cursor: NSString
+//   pageSize: NSInteger
+//   sinceDate: long long
 //  Authorization scope(s):
 //   kGTLAuthScopePostUserinfoEmail
 // Fetches a GTLPostUserPostListResponse.
-+ (id)queryForListWithObject:(GTLPostUserPostListRequest *)object;
++ (id)queryForListWithType:(NSString *)type;
 
 @end

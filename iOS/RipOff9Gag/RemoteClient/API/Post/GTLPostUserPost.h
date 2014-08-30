@@ -13,7 +13,7 @@
 // Description:
 //   Rogag API for Viewing and Posting Funny Pics
 // Classes:
-//   GTLPostUserPost (0 custom class methods, 10 custom properties)
+//   GTLPostUserPost (0 custom class methods, 11 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -30,13 +30,14 @@
 
 @interface GTLPostUserPost : GTLObject
 @property (retain) NSNumber *commentCount;  // intValue
+@property (retain) NSNumber *dateCreated;  // longLongValue
 @property (retain) NSNumber *downVoted;  // boolValue
-@property (copy) NSString *imageType;
 @property (copy) NSString *imageUrl;
 @property (retain) NSNumber *isUnsafe;  // boolValue
 @property (retain) GTLPostUserAccount *owner;
 @property (retain) NSNumber *points;  // intValue
 @property (copy) NSString *postId;
 @property (copy) NSString *title;
+@property (copy) NSString *unsafeImageUrl;
 @property (retain) NSNumber *upVoted;  // boolValue
 @end

@@ -20,7 +20,6 @@
 #import "GTLPostUserPost.h"
 #import "GTLPostUserPostCreateRequest.h"
 #import "GTLPostUserPostCreateResponse.h"
-#import "GTLPostUserPostListRequest.h"
 #import "GTLPostUserPostListResponse.h"
 
 #import "GTLQueryPost.h"

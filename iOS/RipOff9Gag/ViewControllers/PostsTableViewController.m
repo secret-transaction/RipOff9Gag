@@ -14,6 +14,8 @@
 
 @interface PostsTableViewController ()
 
+@property BOOL needsRefresh;
+
 @end
 
 @implementation PostsTableViewController
@@ -47,12 +49,10 @@
     
     GTLServicePost *service = [GTLServicePost new];
     
-    GTLPostUserPostListRequest *request = [GTLPostUserPostListRequest new];
-    request.cursor = @"";
-    request.pageSize = @10L;
-    
-    GTLQueryPost *query = [GTLQueryPost queryForListWithObject:request];
-    
+    GTLQueryPost *query = [GTLQueryPost queryForListWithType:@"trending"];
+    query.cursor = @"";
+    query.pageSize = 10;
+    query.sinceDate = 1;
     
     [service executeQuery:query completionHandler:^(GTLServiceTicket *ticket, GTLPostUserPostListResponse *response, NSError *error) {
         if (!error) {
@@ -63,14 +63,23 @@
                 FunnyPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityFunnyPost inManagedObjectContext:self.context];
                 postEntity.title = post.title;
                 postEntity.imageUrl = post.imageUrl;
+                postEntity.dateCreated = [[NSDate alloc] initWithTimeIntervalSince1970:[post.dateCreated doubleValue] /1000.0];
+                postEntity.isDownvoted = post.downVoted;
+                postEntity.isUnsafe = post.isUnsafe;
+                postEntity.isUpvoted = post.upVoted;
+                postEntity.pointsCount = post.points;
+                postEntity.postId = post.postId;
+                postEntity.unsafeImageUrl = post.unsafeImageUrl;
             }
             
             [[DataManager sharedInstance] saveContext];
+            
+            self.needsRefresh = YES;
+            [self.tableView reloadData];
         } else {
-            NSLog(@"Login Failed:%@", error);
+            NSLog(@"Fetch Failed:%@", error);
         }
     }];
-
 }
 
 #pragma mark - Navigation
@@ -126,7 +135,8 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController != nil) {
+    if (_fetchedResultsController != nil && !self.needsRefresh) {
+        self.needsRefresh = NO;
         return _fetchedResultsController;
     }
     

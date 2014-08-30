@@ -13,9 +13,11 @@
 // Description:
 //   Rogag API for Commenting, UpVoting and DownVoting Funny Posts
 // Classes:
-//   GTLReactionCommentCreateRequest (0 custom class methods, 0 custom properties)
+//   GTLReactionCommentCreateRequest (0 custom class methods, 4 custom properties)
 
 #import "GTLReactionCommentCreateRequest.h"
+
+#import "GTLReactionUserAuthentication.h"
 
 // ----------------------------------------------------------------------------
 //
@@ -23,4 +25,5 @@
 //
 
 @implementation GTLReactionCommentCreateRequest
+@dynamic auth, isComment, message, postId;
 @end
