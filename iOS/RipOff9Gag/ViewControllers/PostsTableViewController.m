@@ -9,7 +9,7 @@
 #import "PostsTableViewController.h"
 #import "DataManager.h"
 #import "PostTableViewCell.h"
-#import "UserPost.h"
+#import "FunnyPost.h"
 #import "AsyncImageDownloader.h"
 
 @interface PostsTableViewController ()
@@ -60,7 +60,7 @@
             
             for (GTLPostUserPost *post in response.posts) {
                 NSLog(@"Got Post:%@", post.postId);
-                UserPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityUserPost inManagedObjectContext:self.context];
+                FunnyPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityFunnyPost inManagedObjectContext:self.context];
                 postEntity.title = post.title;
                 postEntity.imageUrl = post.imageUrl;
             }
@@ -82,26 +82,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    NSUInteger sectionCount = [self.fetchedResultsController.sections count];
+
+    if (sectionCount > 0) {
+        NSUInteger objectCount = [self.fetchedResultsController.sections[section] numberOfObjects];
+        return objectCount;
+    } else {
+        return 1;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.fetchedResultsController.sections count] > 0 ? 352.0 : 500;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCUserPost forIndexPath:indexPath];
+    NSUInteger sectionCount = [self.fetchedResultsController.sections count];
     
-    UserPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.titleLabel.text = userPost.title;
-    
-    [AsyncImageDownloader loadFromURL:userPost.imageUrl toImageView:cell.image];
-    NSLog(@"Image:%@", userPost.imageUrl);
-    
-    return cell;
+    if (sectionCount > 0) {
+        PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCUserPost forIndexPath:indexPath];
+        
+        FunnyPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        cell.titleLabel.text = userPost.title;
+        
+        [AsyncImageDownloader loadFromURL:userPost.imageUrl toImageView:cell.image];
+        NSLog(@"Image:%@", userPost.imageUrl);
+        
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCEmptyPost forIndexPath:indexPath];
+        return cell;
+    }
 }
 
 #pragma mark - Fetched Results Controller
@@ -113,7 +131,7 @@
     }
     
     NSFetchRequest *request = [NSFetchRequest new];
-    [request setEntity:[NSEntityDescription entityForName:kEntityUserPost inManagedObjectContext:self.context]];
+    [request setEntity:[NSEntityDescription entityForName:kEntityFunnyPost inManagedObjectContext:self.context]];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     request.sortDescriptors = @[sortDescriptor];
     

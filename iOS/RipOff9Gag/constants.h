@@ -11,9 +11,10 @@
 
 //table view cells id
 static NSString *const kTVCUserPost = @"TVCUserPost";
+static NSString *const kTVCEmptyPost = @"TVCEmptyPost";
 
 //entity names
-static NSString *const kEntityUserPost = @"UserPost";
+static NSString *const kEntityFunnyPost = @"FunnyPost";
 
 //segues Segue<VCName without "ViewController">
 static NSString *const kSegueUserRegistration = @"SegueUserRegistration";
