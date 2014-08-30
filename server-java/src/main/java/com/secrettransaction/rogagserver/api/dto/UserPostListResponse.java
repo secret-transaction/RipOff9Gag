@@ -2,7 +2,7 @@ package com.secrettransaction.rogagserver.api.dto;
 
 import java.util.List;
 
-public class UserPostListResponse {
+public class UserPostListResponse extends BaseReponse {
 
 	private String cursor;
 	private List<UserPost> posts;
