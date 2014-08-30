@@ -109,6 +109,7 @@ static NSInteger const PickerGallery = 1;
                 //respond on success
                 self.uploadButton.enabled = YES;
                 [self.activityIndicator stopAnimating];
+                [self performSegueWithIdentifier:kUnwindSeguePostTable sender:self];
             }];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

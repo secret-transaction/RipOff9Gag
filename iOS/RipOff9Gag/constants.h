@@ -22,5 +22,6 @@ static NSString *const kSegueAddPost = @"SegueAddPost";
 
 //unwind segues UnwindSegue<VCName without "ViewController">
 static NSString *const kUnwindSegueUserProfile = @"UnwindSegueUserProfile";
+static NSString *const kUnwindSeguePostTable = @"UnwindSeguePostTable";
 
 #endif

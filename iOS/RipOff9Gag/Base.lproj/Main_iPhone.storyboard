@@ -262,9 +262,11 @@
                         <outlet property="image" destination="DMM-to-jcT" id="WFk-ga-xMR"/>
                         <outlet property="isUnsafe" destination="UcC-OP-VbI" id="0Lv-9Y-tVO"/>
                         <outlet property="uploadButton" destination="waQ-Cv-ic9" id="laA-dU-gBW"/>
+                        <segue destination="uxO-TA-1sI" kind="unwind" identifier="UnwindSeguePostTable" unwindAction="unwindToPostTableViewController:" id="ImH-iB-f06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2F-af-6oQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uxO-TA-1sI" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="ZlE-Ox-Rs0">
                     <connections>
                         <action selector="changePhoto:" destination="SWs-SM-hwU" id="oUV-av-tI8"/>
