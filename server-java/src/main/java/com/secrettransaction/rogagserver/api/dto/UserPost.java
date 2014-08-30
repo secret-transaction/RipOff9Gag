@@ -1,6 +1,5 @@
 package com.secrettransaction.rogagserver.api.dto;
 
-
 public class UserPost {
 
 	private String postId;
@@ -11,7 +10,8 @@ public class UserPost {
 	private Boolean isUnsafe;
 	private String title;
 	private String imageUrl;
-	private String imageType;
+	private String unsafeImageUrl;
+	private Long dateCreated;
 	private UserAccount owner;
 
 	public String getPostId() {
@@ -78,20 +78,28 @@ public class UserPost {
 		this.imageUrl = imageUrl;
 	}
 
-	public String getImageType() {
-		return imageType;
-	}
-
-	public void setImageType(String imageType) {
-		this.imageType = imageType;
-	}
-
 	public UserAccount getOwner() {
 		return owner;
 	}
 
 	public void setOwner(UserAccount owner) {
 		this.owner = owner;
+	}
+
+	public String getUnsafeImageUrl() {
+		return unsafeImageUrl;
+	}
+
+	public void setUnsafeImageUrl(String unsafeImageUrl) {
+		this.unsafeImageUrl = unsafeImageUrl;
+	}
+
+	public Long getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Long dateCreated) {
+		this.dateCreated = dateCreated;
 	}
 
 }
