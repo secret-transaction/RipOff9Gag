@@ -95,6 +95,7 @@
 		E9B1062119B1F49D0056717C /* GTLUserLoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B1061719B1F49D0056717C /* GTLUserLoginResponse.m */; };
 		E9B1062219B1F49D0056717C /* GTLUserRegistrationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B1061919B1F49D0056717C /* GTLUserRegistrationRequest.m */; };
 		E9B1062319B1F49D0056717C /* GTLUserRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B1061B19B1F49D0056717C /* GTLUserRegistrationResponse.m */; };
+		E9BD47BC19B22AC4009D6D92 /* GTLPostAppError.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD47BB19B22AC4009D6D92 /* GTLPostAppError.m */; };
 		E9CA9A3F19894964003F1D7D /* UserRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CA9A3E19894964003F1D7D /* UserRegistrationViewController.m */; };
 		E9D3861E19829150005A764B /* PostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D3861D19829150005A764B /* PostsTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -280,6 +281,8 @@
 		E9B1061919B1F49D0056717C /* GTLUserRegistrationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserRegistrationRequest.m; sourceTree = "<group>"; };
 		E9B1061A19B1F49D0056717C /* GTLUserRegistrationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLUserRegistrationResponse.h; sourceTree = "<group>"; };
 		E9B1061B19B1F49D0056717C /* GTLUserRegistrationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLUserRegistrationResponse.m; sourceTree = "<group>"; };
+		E9BD47BA19B22AC4009D6D92 /* GTLPostAppError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLPostAppError.h; sourceTree = "<group>"; };
+		E9BD47BB19B22AC4009D6D92 /* GTLPostAppError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLPostAppError.m; sourceTree = "<group>"; };
 		E9CA9A3D19894964003F1D7D /* UserRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRegistrationViewController.h; sourceTree = "<group>"; };
 		E9CA9A3E19894964003F1D7D /* UserRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRegistrationViewController.m; sourceTree = "<group>"; };
 		E9D3861C19829150005A764B /* PostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsTableViewController.h; sourceTree = "<group>"; };
@@ -493,6 +496,8 @@
 		E93E3BFB1987909000056E0A /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				E9BD47BA19B22AC4009D6D92 /* GTLPostAppError.h */,
+				E9BD47BB19B22AC4009D6D92 /* GTLPostAppError.m */,
 				E92097CA19B2160C00CA4AB7 /* GTLPost.h */,
 				E92097CB19B2160C00CA4AB7 /* GTLPostConstants.h */,
 				E92097CC19B2160C00CA4AB7 /* GTLPostConstants.m */,
@@ -861,6 +866,7 @@
 				E9B105C619B1F4470056717C /* GTLServiceImage.m in Sources */,
 				E9370A98199BBDAD00F7E6C7 /* Model.xcdatamodeld in Sources */,
 				E93E3BBD19878F2100056E0A /* GTLQuery.m in Sources */,
+				E9BD47BC19B22AC4009D6D92 /* GTLPostAppError.m in Sources */,
 				E93E3BE319878F7B00056E0A /* GTMHTTPFetcherService.m in Sources */,
 				E93E3BF819878FA400056E0A /* GTLUtilities.m in Sources */,
 				E9B105C419B1F4470056717C /* GTLImageUserAuthentication.m in Sources */,

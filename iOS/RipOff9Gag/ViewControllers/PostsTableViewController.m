@@ -16,6 +16,8 @@
 
 @property BOOL needsRefresh;
 @property NSNumber *servertime;
+@property (strong, nonatomic) UIBarButtonItem *addBarButtonItem;
+@property (strong, nonatomic) UIBarButtonItem *refreshBarButtonItem;
 
 @end
 
@@ -31,10 +33,13 @@
     
     self.context =  [[DataManager sharedInstance] managedObjectContext];
     
-    UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPost)];
-    UIBarButtonItem *refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTable)];
+    self.addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPost)];
+    self.refreshBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshTable)];
     
-    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:refreshBarButtonItem, addBarButtonItem, nil];
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:self.refreshBarButtonItem, self.addBarButtonItem, nil];
+    
+    //lame way to refresh: by code
+    //[self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)addPost
@@ -44,9 +49,17 @@
     [self performSegueWithIdentifier:kSegueAddPost sender:self];
 }
 
+//cool way to refresh: using xcode
+- (IBAction)pullDownRefresh
+{
+    NSLog(@"Pull down");
+    [self refreshTable];
+}
+
 - (void)refreshTable
 {
     NSLog(@"Refresh");
+    [self startRefreshing];
     
     GTLServicePost *service = [GTLServicePost new];
     
@@ -60,9 +73,19 @@
             NSLog(@"Listing Posts Success");
             self.servertime = response.serverTime;
             
+            NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kEntityFunnyPost inManagedObjectContext:self.context];
+            NSFetchRequest *request = [NSFetchRequest new];
+            [request setEntity:entityDescription];
+            
             for (GTLPostUserPost *post in response.posts) {
+                
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"postId = %@", post.postId];
+                [request setPredicate:predicate];
+                NSArray *arr = [self.context executeFetchRequest:request error:NULL];
+                NSLog(@"Check if exists:%@", arr);
+    
                 NSLog(@"Got Post:%@", post.postId);
-                FunnyPost *postEntity = [NSEntityDescription insertNewObjectForEntityForName:kEntityFunnyPost inManagedObjectContext:self.context];
+                FunnyPost *postEntity = arr != nil && [arr count] > 0  ? arr[0] : [NSEntityDescription insertNewObjectForEntityForName:kEntityFunnyPost inManagedObjectContext:self.context];
                 postEntity.title = post.title;
                 postEntity.imageUrl = post.imageUrl;
                 postEntity.dateCreated = [[NSDate alloc] initWithTimeIntervalSince1970:[post.dateCreated doubleValue] /1000.0];
@@ -78,10 +101,25 @@
             
             self.needsRefresh = YES;
             [self.tableView reloadData];
+            [self endRefreshing];
         } else {
             NSLog(@"Fetch Failed:%@", error);
+            [self endRefreshing];
         }
     }];
+}
+
+- (void)startRefreshing
+{
+    //[self.refreshControl.vis]
+    [self.refreshControl beginRefreshing];
+    self.refreshBarButtonItem.enabled = NO;
+}
+
+- (void)endRefreshing
+{
+    [self.refreshControl endRefreshing];
+    self.refreshBarButtonItem.enabled = YES;
 }
 
 #pragma mark - Navigation
@@ -122,7 +160,9 @@
         
         FunnyPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
         cell.titleLabel.text = userPost.title;
+        cell.subtitleLabel.text = [NSString stringWithFormat:@"%@ points - %@ comments", userPost.pointsCount, userPost.commentCount];
         
+        //TODO: store images in a cache (memory or at least in file)
         [AsyncImageDownloader loadFromURL:userPost.imageUrl toImageView:cell.image];
         NSLog(@"Image:%@", userPost.imageUrl);
         
@@ -147,7 +187,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:NO];
     request.sortDescriptors = @[sortDescriptor];
     
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.context sectionNameKeyPath:@"title" cacheName:@"Master"];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.context sectionNameKeyPath:nil cacheName:@"Master"];
     
     NSError *error = nil;
     if (![fetchedResultsController performFetch:&error]) {

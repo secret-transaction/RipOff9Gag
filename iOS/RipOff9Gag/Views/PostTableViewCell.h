@@ -11,8 +11,7 @@
 @interface PostTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *pointsCount;
-@property (weak, nonatomic) IBOutlet UILabel *commentsCount;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UIButton *downVote;
 @property (weak, nonatomic) IBOutlet UIButton *upVote;

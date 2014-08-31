@@ -88,7 +88,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3,450 points - 69 comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReD-Me-3Qv">
-                                            <rect key="frame" x="20" y="43" width="157" height="21"/>
+                                            <rect key="frame" x="20" y="43" width="275" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
@@ -97,11 +97,10 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="comments" destination="n2E-Wz-KCT" id="oDe-ql-Y9y"/>
-                                    <outlet property="commentsCount" destination="ReD-Me-3Qv" id="GL8-Qz-cIO"/>
                                     <outlet property="downVote" destination="lhR-23-V8Q" id="bU8-6s-hSC"/>
                                     <outlet property="image" destination="rOe-PX-2W7" id="aPr-Tg-fkO"/>
-                                    <outlet property="pointsCount" destination="ReD-Me-3Qv" id="XfB-S6-faz"/>
                                     <outlet property="share" destination="1za-6Z-Po9" id="x0j-n9-BX7"/>
+                                    <outlet property="subtitleLabel" destination="ReD-Me-3Qv" id="GqI-jE-jeI"/>
                                     <outlet property="titleLabel" destination="5WU-6p-LYp" id="k7U-W5-Z2P"/>
                                     <outlet property="upVote" destination="ZnZ-s0-d3W" id="Lk2-qi-Oda"/>
                                 </connections>
@@ -133,6 +132,17 @@
                     <navigationItem key="navigationItem" title="Hot" id="i2L-dL-iKV"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="MPp-z3-IOR">
                         <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Loading Funny Posts...">
+                                <attributes>
+                                    <font key="NSFont" metaFont="toolTip"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <connections>
+                            <action selector="pullDownRefresh" destination="AJq-jW-duZ" eventType="valueChanged" id="OA4-Y6-O9p"/>
+                        </connections>
                     </refreshControl>
                     <connections>
                         <segue destination="SWs-SM-hwU" kind="push" identifier="SegueAddPost" id="Z1j-pa-hci"/>
