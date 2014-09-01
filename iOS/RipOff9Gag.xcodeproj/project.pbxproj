@@ -18,6 +18,7 @@
 		E92097E319B2160C00CA4AB7 /* GTLPostUserPostListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E92097D819B2160C00CA4AB7 /* GTLPostUserPostListResponse.m */; };
 		E92097E419B2160C00CA4AB7 /* GTLQueryPost.m in Sources */ = {isa = PBXBuildFile; fileRef = E92097DA19B2160C00CA4AB7 /* GTLQueryPost.m */; };
 		E92097E519B2160C00CA4AB7 /* GTLServicePost.m in Sources */ = {isa = PBXBuildFile; fileRef = E92097DC19B2160C00CA4AB7 /* GTLServicePost.m */; };
+		E927E94219B42EB100406CCF /* CommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E927E94119B42EB100406CCF /* CommentsTableViewController.m */; };
 		E92E3F53198DE5150077F661 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F52198DE5150077F661 /* LoginViewController.m */; };
 		E92E3F57198E39070077F661 /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F56198E39070077F661 /* SessionManager.m */; };
 		E92E3F5A198E6F370077F661 /* UserProfileDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92E3F59198E6F370077F661 /* UserProfileDisplayViewController.m */; };
@@ -134,6 +135,8 @@
 		E92097DA19B2160C00CA4AB7 /* GTLQueryPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLQueryPost.m; sourceTree = "<group>"; };
 		E92097DB19B2160C00CA4AB7 /* GTLServicePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLServicePost.h; sourceTree = "<group>"; };
 		E92097DC19B2160C00CA4AB7 /* GTLServicePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLServicePost.m; sourceTree = "<group>"; };
+		E927E94019B42EB100406CCF /* CommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewController.h; sourceTree = "<group>"; };
+		E927E94119B42EB100406CCF /* CommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewController.m; sourceTree = "<group>"; };
 		E92E3F51198DE5150077F661 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E92E3F52198DE5150077F661 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E92E3F55198E39070077F661 /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
@@ -669,6 +672,8 @@
 				E94621871987F08A002DFB71 /* DummyViewController.m */,
 				E9049730199536B400EBBBFE /* AddPostViewController.h */,
 				E9049731199536B400EBBBFE /* AddPostViewController.m */,
+				E927E94019B42EB100406CCF /* CommentsTableViewController.h */,
+				E927E94119B42EB100406CCF /* CommentsTableViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -835,6 +840,7 @@
 				E9568CBA198A89C600FDA6E9 /* UserProfileViewController.m in Sources */,
 				E9B1060519B1F4820056717C /* GTLReactionComments.m in Sources */,
 				E93E3BCA19878F3C00056E0A /* GTMOAuth2Authentication.m in Sources */,
+				E927E94219B42EB100406CCF /* CommentsTableViewController.m in Sources */,
 				E9B1061C19B1F49D0056717C /* GTLQueryUser.m in Sources */,
 				E9CA9A3F19894964003F1D7D /* UserRegistrationViewController.m in Sources */,
 				E9B1062319B1F49D0056717C /* GTLUserRegistrationResponse.m in Sources */,

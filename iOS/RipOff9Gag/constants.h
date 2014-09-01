@@ -20,6 +20,7 @@ static NSString *const kEntityFunnyPost = @"FunnyPost";
 static NSString *const kSegueUserRegistration = @"SegueUserRegistration";
 static NSString *const kSegueUserProfileDisplay = @"SegueUserProfileDisplay";
 static NSString *const kSegueAddPost = @"SegueAddPost";
+static NSString *const kSegueShowComments = @"SegueShowComments";
 
 //unwind segues UnwindSegue<VCName without "ViewController">
 static NSString *const kUnwindSegueUserProfile = @"UnwindSegueUserProfile";

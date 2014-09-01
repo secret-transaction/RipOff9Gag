@@ -42,6 +42,23 @@
     //[self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
+- (IBAction)upvote:(id)sender
+{
+    NSLog(@"upvote");
+    
+}
+
+- (IBAction)downvote:(id)sender
+{
+    NSLog(@"downvote");
+}
+
+- (IBAction)viewComments:(id)sender
+{
+    NSLog(@"view comments");
+    [self performSegueWithIdentifier:kSegueShowComments sender:self];
+}
+
 - (void)addPost
 {
     NSLog(@"Add Post");
