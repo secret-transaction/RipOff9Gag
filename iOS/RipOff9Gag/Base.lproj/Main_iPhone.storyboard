@@ -57,7 +57,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="downvote:" destination="AJq-jW-duZ" eventType="touchUpInside" id="dL8-bR-a3c"/>
+                                                <action selector="vote:" destination="Kin-Ow-Otr" eventType="touchUpInside" id="1k4-JY-aT6"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1za-6Z-Po9">
@@ -76,7 +76,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="upvote:" destination="AJq-jW-duZ" eventType="touchUpInside" id="ps8-Fl-8nB"/>
+                                                <action selector="vote:" destination="Kin-Ow-Otr" eventType="touchUpInside" id="bsT-bJ-J5T"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2E-Wz-KCT">
@@ -86,7 +86,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="viewComments:" destination="AJq-jW-duZ" eventType="touchUpInside" id="12u-xD-RAX"/>
+                                                <action selector="viewComments:" destination="Kin-Ow-Otr" eventType="touchUpInside" id="KhQ-fO-hah"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Im the title!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WU-6p-LYp">
@@ -106,12 +106,12 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="comments" destination="n2E-Wz-KCT" id="oDe-ql-Y9y"/>
-                                    <outlet property="downVote" destination="lhR-23-V8Q" id="bU8-6s-hSC"/>
+                                    <outlet property="downVote" destination="lhR-23-V8Q" id="Gg8-Cj-yn6"/>
                                     <outlet property="image" destination="rOe-PX-2W7" id="aPr-Tg-fkO"/>
                                     <outlet property="share" destination="1za-6Z-Po9" id="x0j-n9-BX7"/>
                                     <outlet property="subtitleLabel" destination="ReD-Me-3Qv" id="GqI-jE-jeI"/>
                                     <outlet property="titleLabel" destination="5WU-6p-LYp" id="k7U-W5-Z2P"/>
-                                    <outlet property="upVote" destination="ZnZ-s0-d3W" id="Lk2-qi-Oda"/>
+                                    <outlet property="upVote" destination="ZnZ-s0-d3W" id="UAg-A4-cNt"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TVCEmptyPost" textLabel="TrJ-t1-ZYp" rowHeight="50" style="IBUITableViewCellStyleDefault" id="oea-G0-8DS">

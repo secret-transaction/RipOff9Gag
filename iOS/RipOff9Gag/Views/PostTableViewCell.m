@@ -16,4 +16,13 @@
     [super setSelected:selected animated:animated];
 }
 
+- (IBAction)vote:(UIButton *)sender
+{
+    NSLog(@"voted: %@", sender == self.upVote ? @"UP" : @"DOWN");
+}
+
+- (IBAction)viewComments:(UIButton *)sender
+{
+    [self.viewController performSegueWithIdentifier:kSegueShowComments sender:self];
+}
 @end

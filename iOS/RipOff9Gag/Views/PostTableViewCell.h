@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostsTableViewController.h"
 
 @interface PostTableViewCell : UITableViewCell
 
@@ -17,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *upVote;
 @property (weak, nonatomic) IBOutlet UIButton *comments;
 @property (weak, nonatomic) IBOutlet UIButton *share;
+@property (weak, nonatomic) PostsTableViewController *viewController;
 
 @end

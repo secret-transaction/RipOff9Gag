@@ -18,6 +18,8 @@
 @property NSNumber *servertime;
 @property (strong, nonatomic) UIBarButtonItem *addBarButtonItem;
 @property (strong, nonatomic) UIBarButtonItem *refreshBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIButton *upvoteButton;
+@property (weak, nonatomic) IBOutlet UIButton *downvoteButton;
 
 @end
 
@@ -40,23 +42,6 @@
     
     //lame way to refresh: by code
     //[self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-}
-
-- (IBAction)upvote:(id)sender
-{
-    NSLog(@"upvote");
-    
-}
-
-- (IBAction)downvote:(id)sender
-{
-    NSLog(@"downvote");
-}
-
-- (IBAction)viewComments:(id)sender
-{
-    NSLog(@"view comments");
-    [self performSegueWithIdentifier:kSegueShowComments sender:self];
 }
 
 - (void)addPost
@@ -174,6 +159,7 @@
     
     if (sectionCount > 0) {
         PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTVCUserPost forIndexPath:indexPath];
+        cell.viewController = self;
         
         FunnyPost *userPost = [self.fetchedResultsController objectAtIndexPath:indexPath];
         cell.titleLabel.text = userPost.title;
