@@ -305,7 +305,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qi0-gz-ddV">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qi0-gz-ddV">
                                 <rect key="frame" x="20" y="82" width="280" height="131"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -317,7 +317,7 @@
                                             <outletCollection property="gestureRecognizers" destination="ZlE-Ox-Rs0" appends="YES" id="4sP-4h-s5T"/>
                                         </connections>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="My Funny Pic" translatesAutoresizingMaskIntoConstraints="NO" id="9hl-Y1-Ab4">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="My Funny Pic" translatesAutoresizingMaskIntoConstraints="NO" id="9hl-Y1-Ab4">
                                         <rect key="frame" x="118" y="20" width="156" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,8 +333,11 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="9hl-Y1-Ab4" secondAttribute="centerY" constant="0.5" id="fh1-eN-KFf"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-O7-s5G">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-O7-s5G">
                                 <rect key="frame" x="20" y="221" width="280" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -352,7 +355,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uv8-qb-8Yq">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uv8-qb-8Yq">
                                 <rect key="frame" x="20" y="268" width="280" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -376,6 +379,12 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uv8-qb-8Yq" firstAttribute="top" secondItem="5hu-O7-s5G" secondAttribute="bottom" constant="8" id="7Hk-e2-3wG"/>
+                            <constraint firstItem="qi0-gz-ddV" firstAttribute="leading" secondItem="B5I-0r-XbX" secondAttribute="leading" constant="20" id="9LO-rR-mIZ"/>
+                            <constraint firstAttribute="centerX" secondItem="qi0-gz-ddV" secondAttribute="centerX" id="Rb7-BO-MS6"/>
+                            <constraint firstItem="5hu-O7-s5G" firstAttribute="top" secondItem="qi0-gz-ddV" secondAttribute="bottom" constant="8" id="grY-7O-GRR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VK9-dn-IbW">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Upload" id="waQ-Cv-ic9">
